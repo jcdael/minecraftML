@@ -1,0 +1,60 @@
+﻿
+===== python-unit-fixture-trace =====
+Minecraft AI brain initialized with data dir C:\Users\noahj\Downloads\Minecraft ML\data
+.........................................................Rejected protocol message: invalid_object: position must be an object
+.Rejected non-active adapter message: result
+.....Rejected non-active adapter message: result
+.Rejected non-active adapter message: result
+...........................
+----------------------------------------------------------------------
+Ran 91 tests in 15.350s
+System.Management.Automation.RemoteException
+OK
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'session-1', 'adapter_version': 'test-adapter'}
+Adapter disconnected
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'session-1', 'adapter_version': 'test-adapter'}
+Action result: timeout; action_id=act-f426d9cee4004d649587d252c07eea25
+Adapter disconnected
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'session-1', 'adapter_version': 'test-adapter'}
+Adapter disconnected
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'session-1', 'adapter_version': 'test-adapter'}
+Adapter disconnected
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'old-session', 'adapter_version': 'test-adapter'}
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'new-session', 'adapter_version': 'test-adapter'}
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'session-1', 'adapter_version': 'test-adapter'}
+Goal: gather 16 oak_log; paused=False; completed=False; attempts=0
+Adapter connected: {'protocol_version': 1, 'type': 'hello', 'client': 'mineflayer-adapter', 'role': 'mineflayer_adapter', 'adapter_id': 'adapter-1', 'session_id': 'session-1', 'adapter_version': 'test-adapter'}
+Action result: unsafe; action_id=act-fa9bc8b10b564d4086e37cc5200f165c
+Adapter disconnected
+===== adapter-syntax =====
+$ node --check index.js && node --check safety.js
+===== adapter-fake-window-integration =====
+$ node --test tests/*.test.js
+✔ smelt waits for output transfer and faults a delayed window operation after timeout fence (109.4464ms)
+✔ smelt output transfer after cancel quarantines instead of returning late success (78.5525ms)
+✔ smelt output transfer failure returns failed action with no ingot success detail (44.8614ms)
+✔ smelt accepts observed furnace output slot when helper output view is stale (47.6926ms)
+✔ craft place and smelt timeout/cancellation are fenced by the runner (233.046ms)
+✔ post-stop container side effect is unsafe activity evidence (46.8948ms)
+✔ strict validation rejects coerced values and unknown fields (2.3394ms)
+✔ non-settling execution after abort faults and cannot return success (107.4797ms)
+✔ execution resolving during delayed cleanup is fenced as failed (218.751ms)
+✔ attempted side effect after abort is marked unsafe during post-stop grace (91.7865ms)
+✔ delayed movement after the original grace window is detected by probe (78.4751ms)
+✔ cancellation before execution starts acknowledges inactive state (46.9404ms)
+✔ cancellation during navigation clears pathfinding and emits one terminal result (61.9052ms)
+✔ cancellation during digging clears digging and is idempotent (62.0791ms)
+✔ unsettled timeout faults, waits cleanup, and never reports success (155.7596ms)
+✔ settled timeout remains a normal failed timeout without fault (79.0127ms)
+✔ non-settling execute after cancellation rejects new action and quarantines adapter (92.8568ms)
+✔ new action attempted during cleanup and fence is rejected before prior settlement (438.0632ms)
+✔ concurrent cancel calls share one serialized terminal lifecycle (158.5271ms)
+✔ successful action has complete lifecycle and no post-stop activity (62.9491ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1790.2997

@@ -1,0 +1,1104 @@
+﻿{
+    "summary":  {
+                    "passed":  0,
+                    "total":  1,
+                    "completion_rate":  0,
+                    "median_completion_time_seconds":  null,
+                    "deaths":  0,
+                    "stuck_recoveries":  0,
+                    "hung_runs":  0,
+                    "unsafe_continuations":  0,
+                    "adapter_invalid_lifecycle_log":  0,
+                    "adapter_faults":  0,
+                    "adapter_unresolved_execution":  0,
+                    "adapter_post_stop_activity":  0,
+                    "adapter_duplicate_terminal_events":  0,
+                    "adapter_new_action_before_prior_settlement":  0,
+                    "failure_code_distribution":  {
+                                                      "missing_recipe":  1,
+                                                      "timeout":  3,
+                                                      "success":  25
+                                                  },
+                    "acceptance_gate_passed":  false
+                },
+    "results":  [
+                    {
+                        "seed":  12001,
+                        "outcome":  "unavailable",
+                        "passed":  false,
+                        "missing_required_evidence":  [
+                                                          "outcome_success",
+                                                          "inventory_iron_ingot_1",
+                                                          "phase2_bootstrap_iron",
+                                                          "furnace_iron_output",
+                                                          "verified_goal_complete",
+                                                          "verified_stopped",
+                                                          "initial_inventory_empty"
+                                                      ],
+                        "completion_time_seconds":  134.63,
+                        "deaths":  0,
+                        "stuck_recoveries":  0,
+                        "brain_unsafe_continuations":  0,
+                        "adapter_unsafe_continuations":  0,
+                        "adapter_invalid_lifecycle_log":  0,
+                        "adapter_faults":  0,
+                        "adapter_unresolved_execution":  0,
+                        "adapter_post_stop_activity":  0,
+                        "adapter_duplicate_terminal_events":  0,
+                        "adapter_new_action_before_prior_settlement":  0,
+                        "unsafe_continuations":  0,
+                        "final_inventory":  {
+                                                "cobblestone":  1,
+                                                "dirt":  14,
+                                                "oak_planks":  3,
+                                                "stone_pickaxe":  1,
+                                                "wheat_seeds":  1,
+                                                "wooden_pickaxe":  1
+                                            },
+                        "failure_code_distribution":  {
+                                                          "missing_recipe":  1,
+                                                          "success":  25,
+                                                          "timeout":  3
+                                                      },
+                        "adapter_lifecycle":  [
+                                                  {
+                                                      "action_id":  "act-f85a5d204fde4e958f81e7b490b43bcc",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881323713,
+                                                                              "code":  "timeout",
+                                                                              "ok":  false
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881323466,
+                                                                                "ok":  false,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-1769c387c300426594e46325cb6a5875",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881332295,
+                                                                              "code":  "timeout",
+                                                                              "ok":  false
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881332031,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-0f5be8209a8044ce8957b6f6676bc46e",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881336747,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881336480,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-fe7f034680a04a4895e65f62f40a329a",
+                                                      "skill_name":  "CraftItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881337645,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881337381,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-81260e9d8bbd4e4e93527cf5fcc9e518",
+                                                      "skill_name":  "CraftItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881338665,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881338417,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-dfa55432d93a4f349ac638c50ebfaa52",
+                                                      "skill_name":  "PlaceBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881339737,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881339473,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-8bffe40eacad47ef8756e658889bdc0d",
+                                                      "skill_name":  "CraftItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881340693,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881340430,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-1049533ee48240098edbfced1ad86329",
+                                                      "skill_name":  "CraftItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881341733,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881341471,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-431930c6231645248d2308a67105e202",
+                                                      "skill_name":  "EquipItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881342470,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881342203,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-f180f68641fd45329278b24bd1291c28",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881350982,
+                                                                              "code":  "timeout",
+                                                                              "ok":  false
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881350718,
+                                                                                "ok":  false,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-7fd0a3029b0749849c3192b74640db20",
+                                                      "skill_name":  "EquipItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881351574,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881351332,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-5618d0abadc946a1b95f7232565efba2",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881359867,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881359601,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-75ca313c321745b8a6e9f56bf4db0202",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881363381,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881363117,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-2df7a15edacd4efd88d0e8a4f4ff7ec3",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881365896,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881365646,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-318b2baf248c49b6b585ac6d1bf4cca1",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881369465,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881369198,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-7ba19434671a4141b8775583a541f5aa",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881372916,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881372664,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-4c3b894b6eb7448cb5c893bbc53bcd50",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881376486,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881376223,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-938bf07d60674bcf97b35e2b9ad5ebe4",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881380246,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881379991,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-863762a7362446c3b663ecd8f93f3c5e",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881383964,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881383715,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-f8135d5d41114769a35a8ce97c15dc92",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881386548,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881386283,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-9ea4b9adab454fde84138190359951fb",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881389086,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881388824,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-4c9600e76db542ce9e6280666d8e627f",
+                                                      "skill_name":  "CraftItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881390147,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881389888,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-e76034a4e48542808451fa6bbd4afc2d",
+                                                      "skill_name":  "CraftItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881390793,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881390530,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-fa26c07b517040d5a4f934fbc09b8bc8",
+                                                      "skill_name":  "PlaceBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881391847,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881391589,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-652c93499c38442ba9204ac8bb58bac3",
+                                                      "skill_name":  "EquipItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881392573,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881392308,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-5a5ed05ab2f744e999f131e7fc128e05",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881401069,
+                                                                              "code":  "timeout",
+                                                                              "ok":  false
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881400807,
+                                                                                "ok":  false,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-152c83c0ac2648b7a695f3c848bad5b7",
+                                                      "skill_name":  "EquipItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881401676,
+                                                                              "code":  null,
+                                                                              "ok":  true
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881401412,
+                                                                                "ok":  true,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-3636ef71757d4826ae7f241ef268721f",
+                                                      "skill_name":  "GatherVisibleBlock",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881410185,
+                                                                              "code":  "timeout",
+                                                                              "ok":  false
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881409932,
+                                                                                "ok":  false,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  },
+                                                  {
+                                                      "action_id":  "act-d80df47fb96d4dbfb09e326dcfab2468",
+                                                      "skill_name":  "CraftItem",
+                                                      "terminal_result":  {
+                                                                              "at":  1783881410795,
+                                                                              "code":  "missing_recipe",
+                                                                              "ok":  false
+                                                                          },
+                                                      "execution_settled":  {
+                                                                                "at":  1783881410548,
+                                                                                "ok":  false,
+                                                                                "settled":  true
+                                                                            },
+                                                      "final_activity_state":  {
+                                                                                   "delayed":  {
+                                                                                                   "action_running":  false,
+                                                                                                   "digging_active":  false,
+                                                                                                   "movement_active":  false,
+                                                                                                   "pathfinder_active":  false
+                                                                                               },
+                                                                                   "final":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             },
+                                                                                   "first":  {
+                                                                                                 "action_running":  false,
+                                                                                                 "digging_active":  false,
+                                                                                                 "movement_active":  false,
+                                                                                                 "pathfinder_active":  false
+                                                                                             }
+                                                                               },
+                                                      "unsafe_continuation":  false
+                                                  }
+                                              ],
+                        "adapter_log_summary":  {
+                                                    "path":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-adapter-lifecycle.jsonl",
+                                                    "entries":  58,
+                                                    "invalid_lifecycle_log":  0,
+                                                    "unresolved_execution":  0,
+                                                    "adapter_faults":  0,
+                                                    "post_stop_activity":  0,
+                                                    "duplicate_terminal_events":  0,
+                                                    "new_action_before_prior_settlement":  0,
+                                                    "violations":  [
+
+                                                                   ]
+                                                },
+                        "logs":  {
+                                     "server_stdout":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-server.out.log",
+                                     "brain_stderr":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-brain.err.log",
+                                     "adapter_stdout":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-adapter.out.log",
+                                     "server_stderr":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-server.err.log",
+                                     "adapter_lifecycle":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-adapter-lifecycle.jsonl",
+                                     "brain_stdout":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-brain.out.log",
+                                     "adapter_stderr":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-smoke-12001\\eval-12001-adapter.err.log"
+                                 }
+                    }
+                ]
+}

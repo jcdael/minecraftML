@@ -1,0 +1,6 @@
+-r requirements.txt
+# Phase 1 deliberately does not require ML packages. These optional pins are
+# reserved for later local training experiments and are not imported at runtime.
+torch==2.8.0
+stable-baselines3[extra]==2.7.0
+gymnasium==1.2.0

@@ -1,0 +1,16 @@
+# Local-only training server example. Do not port-forward this server.
+server-ip=127.0.0.1
+server-port=25565
+online-mode=false
+max-players=2
+view-distance=10
+simulation-distance=8
+difficulty=normal
+gamemode=survival
+pvp=false
+allow-flight=false
+enable-command-block=false
+spawn-protection=0
+motd=Local Minecraft AI Training
+level-name=ai-disposable-world
+level-seed=12001

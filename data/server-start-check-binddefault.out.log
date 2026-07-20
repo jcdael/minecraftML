@@ -1,0 +1,44 @@
+Starting net.minecraft.server.Main
+[02:48:16] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[02:48:17] [ServerMain/INFO]: No existing world data, creating new world
+[02:48:17] [ServerMain/INFO]: Loaded 1370 recipes
+[02:48:18] [ServerMain/INFO]: Loaded 1481 advancements
+[02:48:18] [Server thread/INFO]: Starting minecraft server version 1.21.4
+[02:48:18] [Server thread/INFO]: Loading properties
+[02:48:18] [Server thread/INFO]: Default game type: SURVIVAL
+[02:48:18] [Server thread/INFO]: Generating keypair
+[02:48:18] [Server thread/INFO]: Starting Minecraft server on *:25565
+[02:48:18] [Server thread/INFO]: Using default channel type
+[02:48:22] [Yggdrasil Key Fetcher/ERROR]: Failed to request yggdrasil public key
+com.mojang.authlib.exceptions.MinecraftClientException: Failed to read from https://api.minecraftservices.com/publickeys due to Connect timed out
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:111) ~[authlib-6.0.57.jar:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:56) ~[authlib-6.0.57.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilServicesKeyInfo.fetch(YggdrasilServicesKeyInfo.java:114) ~[authlib-6.0.57.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilServicesKeyInfo$1.run(YggdrasilServicesKeyInfo.java:89) ~[authlib-6.0.57.jar:?]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[?:?]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
+	at java.base/java.lang.Thread.run(Unknown Source) [?:?]
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[?:?]
+	at java.base/java.net.Socket.connect(Unknown Source) ~[?:?]
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(Unknown Source) ~[?:?]
+	at java.base/sun.net.NetworkClient.doConnect(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source) ~[?:?]
+	at java.base/java.net.HttpURLConnection.getResponseCode(Unknown Source) ~[?:?]
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(Unknown Source) ~[?:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:82) ~[authlib-6.0.57.jar:?]
+	... 9 more

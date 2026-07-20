@@ -1,0 +1,27 @@
+Starting net.minecraft.server.Main
+[11:27:10] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[11:27:11] [ServerMain/INFO]: No existing world data, creating new world
+[11:27:11] [ServerMain/INFO]: Loaded 1370 recipes
+[11:27:11] [ServerMain/INFO]: Loaded 1481 advancements
+[11:27:11] [Server thread/INFO]: Starting minecraft server version 1.21.4
+[11:27:11] [Server thread/INFO]: Loading properties
+[11:27:11] [Server thread/INFO]: Default game type: SURVIVAL
+[11:27:11] [Server thread/INFO]: Generating keypair
+[11:27:11] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25700
+[11:27:12] [Server thread/INFO]: Using default channel type
+[11:27:12] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[11:27:12] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[11:27:12] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[11:27:12] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[11:27:12] [Server thread/INFO]: Preparing level "ai-eval-seed-12002"
+[11:27:13] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[11:27:13] [Worker-Main-13/INFO]: Preparing spawn area: 2%
+[11:27:14] [Worker-Main-11/INFO]: Preparing spawn area: 2%
+[11:27:14] [Worker-Main-11/INFO]: Preparing spawn area: 51%
+[11:27:14] [Server thread/INFO]: Time elapsed: 1351 ms
+[11:27:14] [Server thread/INFO]: Done (2.900s)! For help, type "help"
+[11:27:18] [Server thread/INFO]: Learner[/127.0.0.1:57640] logged in with entity id 15 at (25.5, 63.0, 4.5)
+[11:27:18] [Server thread/INFO]: Learner joined the game
+[11:27:21] [Server thread/WARN]: Learner moved wrongly!
+[11:42:23] [Server thread/INFO]: Learner lost connection: Disconnected
+[11:42:23] [Server thread/INFO]: Learner left the game

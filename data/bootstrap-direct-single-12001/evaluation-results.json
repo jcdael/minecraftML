@@ -1,0 +1,73 @@
+﻿{
+    "summary":  {
+                    "passed":  0,
+                    "total":  1,
+                    "completion_rate":  0,
+                    "median_completion_time_seconds":  null,
+                    "p95_completion_time_seconds":  null,
+                    "navigation_retries":  0,
+                    "exploration_retries":  0,
+                    "deaths":  0,
+                    "stuck_recoveries":  0,
+                    "hung_runs":  1,
+                    "unsafe_continuations":  0,
+                    "adapter_invalid_lifecycle_log":  1,
+                    "adapter_faults":  0,
+                    "adapter_unresolved_execution":  0,
+                    "adapter_post_stop_activity":  0,
+                    "adapter_duplicate_terminal_events":  0,
+                    "adapter_new_action_before_prior_settlement":  0,
+                    "failure_code_distribution":  {
+
+                                                  },
+                    "acceptance_gate_passed":  false
+                },
+    "results":  [
+                    {
+                        "seed":  12001,
+                        "outcome":  "timeout",
+                        "passed":  false,
+                        "missing_required_evidence":  [
+                                                          "completed_run_record"
+                                                      ],
+                        "completion_time_seconds":  1102.96,
+                        "deaths":  0,
+                        "stuck_recoveries":  0,
+                        "brain_unsafe_continuations":  0,
+                        "adapter_unsafe_continuations":  0,
+                        "adapter_invalid_lifecycle_log":  1,
+                        "adapter_faults":  0,
+                        "adapter_unresolved_execution":  0,
+                        "adapter_post_stop_activity":  0,
+                        "adapter_duplicate_terminal_events":  0,
+                        "adapter_new_action_before_prior_settlement":  0,
+                        "unsafe_continuations":  0,
+                        "final_inventory":  {
+
+                                            },
+                        "failure_code_distribution":  {
+                                                          "timeout":  1
+                                                      },
+                        "adapter_lifecycle":  {
+
+                                              },
+                        "adapter_log_summary":  {
+
+                                                },
+                        "critical_skill_failures":  {
+
+                                                    },
+                        "navigation_retries":  0,
+                        "exploration_retries":  0,
+                        "logs":  {
+                                     "server_stdout":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-direct-single-12001\\eval-12001-server.out.log",
+                                     "brain_stderr":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-direct-single-12001\\eval-12001-brain.err.log",
+                                     "adapter_stdout":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-direct-single-12001\\eval-12001-adapter.out.log",
+                                     "server_stderr":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-direct-single-12001\\eval-12001-server.err.log",
+                                     "adapter_lifecycle":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-direct-single-12001\\eval-12001-adapter-lifecycle.jsonl",
+                                     "brain_stdout":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-direct-single-12001\\eval-12001-brain.out.log",
+                                     "adapter_stderr":  "C:\\Users\\noahj\\Downloads\\Minecraft ML\\data\\bootstrap-direct-single-12001\\eval-12001-adapter.err.log"
+                                 }
+                    }
+                ]
+}

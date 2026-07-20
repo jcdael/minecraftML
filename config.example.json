@@ -1,0 +1,22 @@
+{
+  "minecraft": {
+    "host": "127.0.0.1",
+    "port": 25565,
+    "username": "Learner",
+    "auth": "offline",
+    "version": "1.21.4"
+  },
+  "brain": {
+    "url": "ws://127.0.0.1:8765",
+    "observation_interval_ms": 500
+  },
+  "observation": {
+    "horizontal_radius": 12,
+    "vertical_radius": 6,
+    "entity_radius": 16
+  },
+  "safety": {
+    "max_control_duration_ms": 6000,
+    "max_action_duration_ms": 20000
+  }
+}

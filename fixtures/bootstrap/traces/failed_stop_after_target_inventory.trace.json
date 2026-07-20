@@ -1,0 +1,148 @@
+{
+  "frames": [
+    {
+      "adapter_result": {
+        "after_state": {
+          "action_running": true,
+          "container_active": false,
+          "digging_active": false,
+          "food": 20,
+          "health": 20,
+          "inventory": [
+            {
+              "count": 16,
+              "name": "oak_log",
+              "slot": 9
+            }
+          ],
+          "movement_active": true,
+          "nearby_blocks": {
+            "counts": {},
+            "samples": []
+          },
+          "nearby_entities": [],
+          "pathfinder_active": true,
+          "position": {
+            "x": 0,
+            "y": 64,
+            "z": 0
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        "lifecycle": {
+          "cleanup_completed": 3,
+          "cleanup_started": 2,
+          "events": [
+            {
+              "at": 2,
+              "name": "cleanup_started",
+              "seq": 1
+            },
+            {
+              "at": 3,
+              "name": "cleanup_completed",
+              "seq": 2
+            },
+            {
+              "at": 4,
+              "name": "execution_settled",
+              "seq": 3
+            },
+            {
+              "at": 5,
+              "name": "post_stop_probe_completed",
+              "seq": 4,
+              "unsafe_continuation": false
+            },
+            {
+              "at": 5,
+              "name": "terminal_result",
+              "seq": 5
+            }
+          ],
+          "execution_settled": {
+            "at": 4,
+            "ok": true,
+            "settled": true
+          },
+          "final_activity_state": {
+            "delayed": {
+              "action_running": false,
+              "container_active": false,
+              "digging_active": false,
+              "movement_active": false,
+              "pathfinder_active": false
+            },
+            "final": {
+              "action_running": false,
+              "container_active": false,
+              "digging_active": false,
+              "movement_active": false,
+              "pathfinder_active": false
+            },
+            "first": {
+              "action_running": false,
+              "container_active": false,
+              "digging_active": false,
+              "movement_active": false,
+              "pathfinder_active": false
+            }
+          },
+          "started": 1,
+          "terminal_result": {
+            "at": 5,
+            "ok": true
+          },
+          "unsafe_continuation": false
+        },
+        "ok": true,
+        "protocol_version": 1,
+        "type": "result"
+      },
+      "expected_terminal": {
+        "failure_code": "stop_not_verified",
+        "outcome": "unsafe"
+      },
+      "observation": {
+        "action_running": true,
+        "container_active": false,
+        "digging_active": false,
+        "food": 20,
+        "health": 20,
+        "inventory": [
+          {
+            "count": 16,
+            "name": "oak_log",
+            "slot": 9
+          }
+        ],
+        "movement_active": true,
+        "nearby_blocks": {
+          "counts": {},
+          "samples": []
+        },
+        "nearby_entities": [],
+        "pathfinder_active": true,
+        "position": {
+          "x": 0,
+          "y": 64,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "selected_action": {
+        "kind": "stop",
+        "reason": "verified_goal_complete"
+      }
+    }
+  ],
+  "schema_version": "minecraft_ml_trace.v2"
+}

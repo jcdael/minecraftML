@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "C:\Users\noahj\Downloads\Minecraft ML\brain\main.py", line 202, in <module>
+    try:
+        ^
+  File "C:\Users\noahj\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\noahj\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\noahj\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\noahj\Downloads\Minecraft ML\brain\main.py", line 196, in main
+    print(f"Minecraft AI brain listening on ws://{HOST}:{PORT}", flush=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\noahj\Downloads\Minecraft ML\brain\.venv\Lib\site-packages\websockets\asyncio\server.py", line 813, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "C:\Users\noahj\Downloads\Minecraft ML\brain\.venv\Lib\site-packages\websockets\asyncio\server.py", line 831, in __await_impl__
+    server = await self.create_server
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\noahj\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py", line 1584, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8776): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted

@@ -1,0 +1,27 @@
+Starting net.minecraft.server.Main
+[12:57:49] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[12:57:50] [ServerMain/INFO]: No existing world data, creating new world
+[12:57:51] [ServerMain/INFO]: Loaded 1370 recipes
+[12:57:51] [ServerMain/INFO]: Loaded 1481 advancements
+[12:57:51] [Server thread/INFO]: Starting minecraft server version 1.21.4
+[12:57:51] [Server thread/INFO]: Loading properties
+[12:57:51] [Server thread/INFO]: Default game type: SURVIVAL
+[12:57:51] [Server thread/INFO]: Generating keypair
+[12:57:51] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25770
+[12:57:51] [Server thread/INFO]: Using default channel type
+[12:57:51] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[12:57:51] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[12:57:51] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[12:57:51] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[12:57:51] [Server thread/INFO]: Preparing level "ai-eval-seed-12002"
+[12:57:53] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[12:57:53] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[12:57:53] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[12:57:54] [Worker-Main-12/INFO]: Preparing spawn area: 51%
+[12:57:54] [Server thread/INFO]: Time elapsed: 1324 ms
+[12:57:54] [Server thread/INFO]: Done (2.907s)! For help, type "help"
+[12:58:00] [Server thread/INFO]: Learner[/127.0.0.1:60046] logged in with entity id 15 at (26.5, 68.0, 2.5)
+[12:58:00] [Server thread/INFO]: Learner joined the game
+[12:58:03] [Server thread/WARN]: Learner moved wrongly!
+[13:13:06] [Server thread/INFO]: Learner lost connection: Disconnected
+[13:13:06] [Server thread/INFO]: Learner left the game

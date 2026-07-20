@@ -1,0 +1,516 @@
+{
+  "frames": [
+    {
+      "adapter_result": {
+        "after_state": {
+          "action_running": false,
+          "container_active": false,
+          "digging_active": false,
+          "food": 20,
+          "health": 20,
+          "inventory": [
+            {
+              "count": 1,
+              "name": "dirt_0",
+              "slot": 0
+            },
+            {
+              "count": 1,
+              "name": "dirt_1",
+              "slot": 1
+            },
+            {
+              "count": 1,
+              "name": "dirt_2",
+              "slot": 2
+            },
+            {
+              "count": 1,
+              "name": "dirt_3",
+              "slot": 3
+            },
+            {
+              "count": 1,
+              "name": "dirt_4",
+              "slot": 4
+            },
+            {
+              "count": 1,
+              "name": "dirt_5",
+              "slot": 5
+            },
+            {
+              "count": 1,
+              "name": "dirt_6",
+              "slot": 6
+            },
+            {
+              "count": 1,
+              "name": "dirt_7",
+              "slot": 7
+            },
+            {
+              "count": 1,
+              "name": "dirt_8",
+              "slot": 8
+            },
+            {
+              "count": 1,
+              "name": "dirt_9",
+              "slot": 9
+            },
+            {
+              "count": 1,
+              "name": "dirt_10",
+              "slot": 10
+            },
+            {
+              "count": 1,
+              "name": "dirt_11",
+              "slot": 11
+            },
+            {
+              "count": 1,
+              "name": "dirt_12",
+              "slot": 12
+            },
+            {
+              "count": 1,
+              "name": "dirt_13",
+              "slot": 13
+            },
+            {
+              "count": 1,
+              "name": "dirt_14",
+              "slot": 14
+            },
+            {
+              "count": 1,
+              "name": "dirt_15",
+              "slot": 15
+            },
+            {
+              "count": 1,
+              "name": "dirt_16",
+              "slot": 16
+            },
+            {
+              "count": 1,
+              "name": "dirt_17",
+              "slot": 17
+            },
+            {
+              "count": 1,
+              "name": "dirt_18",
+              "slot": 18
+            },
+            {
+              "count": 1,
+              "name": "dirt_19",
+              "slot": 19
+            },
+            {
+              "count": 1,
+              "name": "dirt_20",
+              "slot": 20
+            },
+            {
+              "count": 1,
+              "name": "dirt_21",
+              "slot": 21
+            },
+            {
+              "count": 1,
+              "name": "dirt_22",
+              "slot": 22
+            },
+            {
+              "count": 1,
+              "name": "dirt_23",
+              "slot": 23
+            },
+            {
+              "count": 1,
+              "name": "dirt_24",
+              "slot": 24
+            },
+            {
+              "count": 1,
+              "name": "dirt_25",
+              "slot": 25
+            },
+            {
+              "count": 1,
+              "name": "dirt_26",
+              "slot": 26
+            },
+            {
+              "count": 1,
+              "name": "dirt_27",
+              "slot": 27
+            },
+            {
+              "count": 1,
+              "name": "dirt_28",
+              "slot": 28
+            },
+            {
+              "count": 1,
+              "name": "dirt_29",
+              "slot": 29
+            },
+            {
+              "count": 1,
+              "name": "dirt_30",
+              "slot": 30
+            },
+            {
+              "count": 1,
+              "name": "dirt_31",
+              "slot": 31
+            },
+            {
+              "count": 1,
+              "name": "dirt_32",
+              "slot": 32
+            },
+            {
+              "count": 1,
+              "name": "dirt_33",
+              "slot": 33
+            },
+            {
+              "count": 1,
+              "name": "dirt_34",
+              "slot": 34
+            },
+            {
+              "count": 1,
+              "name": "dirt_35",
+              "slot": 35
+            }
+          ],
+          "movement_active": false,
+          "nearby_blocks": {
+            "counts": {
+              "oak_log": 1
+            },
+            "samples": [
+              {
+                "dx": 1,
+                "dy": 0,
+                "dz": 0,
+                "name": "oak_log"
+              }
+            ]
+          },
+          "nearby_entities": [],
+          "pathfinder_active": false,
+          "position": {
+            "x": 0,
+            "y": 64,
+            "z": 0
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        "lifecycle": {
+          "cleanup_completed": 3,
+          "cleanup_started": 2,
+          "events": [
+            {
+              "at": 2,
+              "name": "cleanup_started",
+              "seq": 1
+            },
+            {
+              "at": 3,
+              "name": "cleanup_completed",
+              "seq": 2
+            },
+            {
+              "at": 4,
+              "name": "execution_settled",
+              "seq": 3
+            },
+            {
+              "at": 5,
+              "name": "post_stop_probe_completed",
+              "seq": 4,
+              "unsafe_continuation": false
+            },
+            {
+              "at": 5,
+              "name": "terminal_result",
+              "seq": 5
+            }
+          ],
+          "execution_settled": {
+            "at": 4,
+            "ok": true,
+            "settled": true
+          },
+          "final_activity_state": {
+            "delayed": {
+              "action_running": false,
+              "container_active": false,
+              "digging_active": false,
+              "movement_active": false,
+              "pathfinder_active": false
+            },
+            "final": {
+              "action_running": false,
+              "container_active": false,
+              "digging_active": false,
+              "movement_active": false,
+              "pathfinder_active": false
+            },
+            "first": {
+              "action_running": false,
+              "container_active": false,
+              "digging_active": false,
+              "movement_active": false,
+              "pathfinder_active": false
+            }
+          },
+          "started": 1,
+          "terminal_result": {
+            "at": 5,
+            "ok": true
+          },
+          "unsafe_continuation": false
+        },
+        "ok": true,
+        "protocol_version": 1,
+        "type": "result"
+      },
+      "expected_terminal": {
+        "failure_code": "inventory_full",
+        "outcome": "inventory_full"
+      },
+      "observation": {
+        "action_running": false,
+        "container_active": false,
+        "digging_active": false,
+        "food": 20,
+        "health": 20,
+        "inventory": [
+          {
+            "count": 1,
+            "name": "dirt_0",
+            "slot": 0
+          },
+          {
+            "count": 1,
+            "name": "dirt_1",
+            "slot": 1
+          },
+          {
+            "count": 1,
+            "name": "dirt_2",
+            "slot": 2
+          },
+          {
+            "count": 1,
+            "name": "dirt_3",
+            "slot": 3
+          },
+          {
+            "count": 1,
+            "name": "dirt_4",
+            "slot": 4
+          },
+          {
+            "count": 1,
+            "name": "dirt_5",
+            "slot": 5
+          },
+          {
+            "count": 1,
+            "name": "dirt_6",
+            "slot": 6
+          },
+          {
+            "count": 1,
+            "name": "dirt_7",
+            "slot": 7
+          },
+          {
+            "count": 1,
+            "name": "dirt_8",
+            "slot": 8
+          },
+          {
+            "count": 1,
+            "name": "dirt_9",
+            "slot": 9
+          },
+          {
+            "count": 1,
+            "name": "dirt_10",
+            "slot": 10
+          },
+          {
+            "count": 1,
+            "name": "dirt_11",
+            "slot": 11
+          },
+          {
+            "count": 1,
+            "name": "dirt_12",
+            "slot": 12
+          },
+          {
+            "count": 1,
+            "name": "dirt_13",
+            "slot": 13
+          },
+          {
+            "count": 1,
+            "name": "dirt_14",
+            "slot": 14
+          },
+          {
+            "count": 1,
+            "name": "dirt_15",
+            "slot": 15
+          },
+          {
+            "count": 1,
+            "name": "dirt_16",
+            "slot": 16
+          },
+          {
+            "count": 1,
+            "name": "dirt_17",
+            "slot": 17
+          },
+          {
+            "count": 1,
+            "name": "dirt_18",
+            "slot": 18
+          },
+          {
+            "count": 1,
+            "name": "dirt_19",
+            "slot": 19
+          },
+          {
+            "count": 1,
+            "name": "dirt_20",
+            "slot": 20
+          },
+          {
+            "count": 1,
+            "name": "dirt_21",
+            "slot": 21
+          },
+          {
+            "count": 1,
+            "name": "dirt_22",
+            "slot": 22
+          },
+          {
+            "count": 1,
+            "name": "dirt_23",
+            "slot": 23
+          },
+          {
+            "count": 1,
+            "name": "dirt_24",
+            "slot": 24
+          },
+          {
+            "count": 1,
+            "name": "dirt_25",
+            "slot": 25
+          },
+          {
+            "count": 1,
+            "name": "dirt_26",
+            "slot": 26
+          },
+          {
+            "count": 1,
+            "name": "dirt_27",
+            "slot": 27
+          },
+          {
+            "count": 1,
+            "name": "dirt_28",
+            "slot": 28
+          },
+          {
+            "count": 1,
+            "name": "dirt_29",
+            "slot": 29
+          },
+          {
+            "count": 1,
+            "name": "dirt_30",
+            "slot": 30
+          },
+          {
+            "count": 1,
+            "name": "dirt_31",
+            "slot": 31
+          },
+          {
+            "count": 1,
+            "name": "dirt_32",
+            "slot": 32
+          },
+          {
+            "count": 1,
+            "name": "dirt_33",
+            "slot": 33
+          },
+          {
+            "count": 1,
+            "name": "dirt_34",
+            "slot": 34
+          },
+          {
+            "count": 1,
+            "name": "dirt_35",
+            "slot": 35
+          }
+        ],
+        "movement_active": false,
+        "nearby_blocks": {
+          "counts": {
+            "oak_log": 1
+          },
+          "samples": [
+            {
+              "dx": 1,
+              "dy": 0,
+              "dz": 0,
+              "name": "oak_log"
+            }
+          ]
+        },
+        "nearby_entities": [],
+        "pathfinder_active": false,
+        "position": {
+          "x": 0,
+          "y": 64,
+          "z": 0
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      "selected_action": {
+        "kind": "stop",
+        "reason": "inventory_full"
+      }
+    }
+  ],
+  "schema_version": "minecraft_ml_trace.v2"
+}

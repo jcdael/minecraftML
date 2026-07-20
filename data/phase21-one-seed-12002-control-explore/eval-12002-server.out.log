@@ -1,0 +1,27 @@
+Starting net.minecraft.server.Main
+[13:14:33] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[13:14:33] [ServerMain/INFO]: No existing world data, creating new world
+[13:14:34] [ServerMain/INFO]: Loaded 1370 recipes
+[13:14:34] [ServerMain/INFO]: Loaded 1481 advancements
+[13:14:34] [Server thread/INFO]: Starting minecraft server version 1.21.4
+[13:14:34] [Server thread/INFO]: Loading properties
+[13:14:34] [Server thread/INFO]: Default game type: SURVIVAL
+[13:14:34] [Server thread/INFO]: Generating keypair
+[13:14:34] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25780
+[13:14:34] [Server thread/INFO]: Using default channel type
+[13:14:34] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[13:14:34] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[13:14:34] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[13:14:34] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[13:14:34] [Server thread/INFO]: Preparing level "ai-eval-seed-12002"
+[13:14:36] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[13:14:36] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[13:14:37] [Worker-Main-13/INFO]: Preparing spawn area: 2%
+[13:14:37] [Worker-Main-3/INFO]: Preparing spawn area: 51%
+[13:14:37] [Server thread/INFO]: Time elapsed: 1361 ms
+[13:14:37] [Server thread/INFO]: Done (3.010s)! For help, type "help"
+[13:14:43] [Server thread/INFO]: Learner[/127.0.0.1:63346] logged in with entity id 15 at (13.5, 71.0, 12.5)
+[13:14:43] [Server thread/INFO]: Learner joined the game
+[13:14:46] [Server thread/WARN]: Learner moved too quickly! 0.0,-9.006083414545792,9.085966374365228
+[13:29:53] [Server thread/INFO]: Learner lost connection: Disconnected
+[13:29:53] [Server thread/INFO]: Learner left the game

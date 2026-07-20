@@ -1,0 +1,306 @@
+{
+  "manifest_version": "phase2.1-bootstrap-fixtures-v1",
+  "generated_for": "offline deterministic Minecraft ML bootstrap",
+  "fixtures": [
+{
+      "id": "normal_bootstrap",
+      "description": "Happy-path bootstrap from empty inventory to one iron ingot.",
+      "mc_version": "1.21.4",
+      "server_version": "vanilla-1.21.4",
+      "seed": 12001,
+      "seed_template": {
+        "path": "world_templates/bootstrap_seed_12001",
+        "sha256": "b80efbe5a9d738b3dbc676ff207538b7edda822947b17043f72444e67f49f4a2"
+      },
+      "bot_spawn": { "x": 0.5, "y": 64.0, "z": 0.5, "yaw": 0.0, "pitch": 0.0 },
+      "difficulty": "normal",
+      "time": 1000,
+      "weather": "clear",
+      "gamerules": {
+        "doDaylightCycle": false,
+        "doWeatherCycle": false,
+        "keepInventory": false,
+        "mobGriefing": true,
+        "naturalRegeneration": true
+      },
+      "expected_initial": {
+        "health": 20,
+        "food": 20,
+        "inventory": [],
+        "world_state": {
+          "nearby_blocks": {
+            "oak_log": 12,
+            "stone": 24,
+            "coal_ore": 4,
+            "iron_ore": 3
+          },
+          "nearby_entities": [],
+          "hazards": []
+        }
+      },
+      "budgets": {
+        "scenario": { "max_ticks": 12000, "max_actions": 48, "timeout_ms": 600000 },
+        "per_skill": {
+          "gather_visible_block": { "max_attempts": 12, "timeout_ms": 45000 },
+          "craft_item": { "max_attempts": 8, "timeout_ms": 30000 },
+          "equip_item": { "max_attempts": 4, "timeout_ms": 15000 },
+          "place_block": { "max_attempts": 4, "timeout_ms": 20000 },
+          "smelt_item": { "max_attempts": 3, "timeout_ms": 90000 }
+        }
+      },
+      "expected_terminal": {
+        "outcome": "success",
+        "failure_code": "none"
+      }
+    },
+    {
+      "id": "missing_materials",
+      "description": "Bootstrap starts in a deterministic area with no mineable iron or coal evidence.",
+      "mc_version": "1.21.4",
+      "server_version": "vanilla-1.21.4",
+      "seed": 12001,
+      "seed_template": {
+        "path": "world_templates/bootstrap_seed_12001",
+        "sha256": "b80efbe5a9d738b3dbc676ff207538b7edda822947b17043f72444e67f49f4a2"
+      },
+      "bot_spawn": { "x": 16.5, "y": 64.0, "z": 16.5, "yaw": 90.0, "pitch": 0.0 },
+      "difficulty": "normal",
+      "time": 1000,
+      "weather": "clear",
+      "gamerules": {
+        "doDaylightCycle": false,
+        "doWeatherCycle": false,
+        "keepInventory": false,
+        "mobGriefing": true,
+        "naturalRegeneration": true
+      },
+      "expected_initial": {
+        "health": 20,
+        "food": 20,
+        "inventory": [],
+        "world_state": {
+          "nearby_blocks": {
+            "oak_log": 8,
+            "stone": 10,
+            "coal_ore": 0,
+            "iron_ore": 0
+          },
+          "nearby_entities": [],
+          "hazards": []
+        }
+      },
+      "budgets": {
+        "scenario": { "max_ticks": 6000, "max_actions": 24, "timeout_ms": 300000 },
+        "per_skill": {
+          "gather_visible_block": { "max_attempts": 10, "timeout_ms": 45000 },
+          "craft_item": { "max_attempts": 6, "timeout_ms": 30000 },
+          "equip_item": { "max_attempts": 3, "timeout_ms": 15000 },
+          "place_block": { "max_attempts": 3, "timeout_ms": 20000 },
+          "smelt_item": { "max_attempts": 1, "timeout_ms": 60000 }
+        }
+      },
+      "expected_terminal": {
+        "outcome": "failed",
+        "failure_code": "missing_required_material"
+      }
+    },
+    {
+      "id": "full_inventory",
+      "description": "Bootstrap starts with all inventory slots occupied so item pickup and craft output must fail safely.",
+      "mc_version": "1.21.4",
+      "server_version": "vanilla-1.21.4",
+      "seed": 12001,
+      "seed_template": {
+        "path": "world_templates/bootstrap_seed_12001",
+        "sha256": "b80efbe5a9d738b3dbc676ff207538b7edda822947b17043f72444e67f49f4a2"
+      },
+      "bot_spawn": { "x": -16.5, "y": 64.0, "z": 16.5, "yaw": 180.0, "pitch": 0.0 },
+      "difficulty": "normal",
+      "time": 1000,
+      "weather": "clear",
+      "gamerules": {
+        "doDaylightCycle": false,
+        "doWeatherCycle": false,
+        "keepInventory": false,
+        "mobGriefing": true,
+        "naturalRegeneration": true
+      },
+      "expected_initial": {
+        "health": 20,
+        "food": 20,
+        "inventory": [
+          { "name": "cobblestone", "count": 64, "slot": 0 },
+          { "name": "dirt", "count": 64, "slot": 1 },
+          { "name": "gravel", "count": 64, "slot": 2 },
+          { "name": "sand", "count": 64, "slot": 3 },
+          { "name": "andesite", "count": 64, "slot": 4 },
+          { "name": "diorite", "count": 64, "slot": 5 },
+          { "name": "granite", "count": 64, "slot": 6 },
+          { "name": "oak_sapling", "count": 64, "slot": 7 },
+          { "name": "stick", "count": 64, "slot": 8 },
+          { "name": "flint", "count": 64, "slot": 9 },
+          { "name": "cobblestone", "count": 64, "slot": 10 },
+          { "name": "dirt", "count": 64, "slot": 11 },
+          { "name": "gravel", "count": 64, "slot": 12 },
+          { "name": "sand", "count": 64, "slot": 13 },
+          { "name": "andesite", "count": 64, "slot": 14 },
+          { "name": "diorite", "count": 64, "slot": 15 },
+          { "name": "granite", "count": 64, "slot": 16 },
+          { "name": "oak_sapling", "count": 64, "slot": 17 },
+          { "name": "stick", "count": 64, "slot": 18 },
+          { "name": "flint", "count": 64, "slot": 19 },
+          { "name": "cobblestone", "count": 64, "slot": 20 },
+          { "name": "dirt", "count": 64, "slot": 21 },
+          { "name": "gravel", "count": 64, "slot": 22 },
+          { "name": "sand", "count": 64, "slot": 23 },
+          { "name": "andesite", "count": 64, "slot": 24 },
+          { "name": "diorite", "count": 64, "slot": 25 },
+          { "name": "granite", "count": 64, "slot": 26 },
+          { "name": "oak_sapling", "count": 64, "slot": 27 },
+          { "name": "stick", "count": 64, "slot": 28 },
+          { "name": "flint", "count": 64, "slot": 29 },
+          { "name": "cobblestone", "count": 64, "slot": 30 },
+          { "name": "dirt", "count": 64, "slot": 31 },
+          { "name": "gravel", "count": 64, "slot": 32 },
+          { "name": "sand", "count": 64, "slot": 33 },
+          { "name": "andesite", "count": 64, "slot": 34 },
+          { "name": "diorite", "count": 64, "slot": 35 }
+        ],
+        "world_state": {
+          "nearby_blocks": {
+            "oak_log": 12,
+            "stone": 24,
+            "coal_ore": 4,
+            "iron_ore": 3
+          },
+          "nearby_entities": [],
+          "hazards": []
+        }
+      },
+      "budgets": {
+        "scenario": { "max_ticks": 4000, "max_actions": 12, "timeout_ms": 180000 },
+        "per_skill": {
+          "gather_visible_block": { "max_attempts": 4, "timeout_ms": 30000 },
+          "craft_item": { "max_attempts": 2, "timeout_ms": 20000 },
+          "equip_item": { "max_attempts": 2, "timeout_ms": 10000 },
+          "place_block": { "max_attempts": 1, "timeout_ms": 15000 },
+          "smelt_item": { "max_attempts": 1, "timeout_ms": 60000 }
+        }
+      },
+      "expected_terminal": {
+        "outcome": "failed",
+        "failure_code": "inventory_full"
+      }
+    },
+    {
+      "id": "low_food_with_safe_food",
+      "description": "Bootstrap starts hungry but with safe food available before mining and smelting.",
+      "mc_version": "1.21.4",
+      "server_version": "vanilla-1.21.4",
+      "seed": 12001,
+      "seed_template": {
+        "path": "world_templates/bootstrap_seed_12001",
+        "sha256": "b80efbe5a9d738b3dbc676ff207538b7edda822947b17043f72444e67f49f4a2"
+      },
+      "bot_spawn": { "x": 0.5, "y": 64.0, "z": -16.5, "yaw": 270.0, "pitch": 0.0 },
+      "difficulty": "normal",
+      "time": 1000,
+      "weather": "clear",
+      "gamerules": {
+        "doDaylightCycle": false,
+        "doWeatherCycle": false,
+        "keepInventory": false,
+        "mobGriefing": true,
+        "naturalRegeneration": true
+      },
+      "expected_initial": {
+        "health": 20,
+        "food": 5,
+        "inventory": [
+          { "name": "bread", "count": 2, "slot": 9 }
+        ],
+        "world_state": {
+          "nearby_blocks": {
+            "oak_log": 12,
+            "stone": 24,
+            "coal_ore": 4,
+            "iron_ore": 3
+          },
+          "nearby_entities": [],
+          "hazards": []
+        }
+      },
+      "budgets": {
+        "scenario": { "max_ticks": 12000, "max_actions": 52, "timeout_ms": 620000 },
+        "per_skill": {
+          "eat_when_needed": { "max_attempts": 2, "timeout_ms": 15000 },
+          "gather_visible_block": { "max_attempts": 12, "timeout_ms": 45000 },
+          "craft_item": { "max_attempts": 8, "timeout_ms": 30000 },
+          "equip_item": { "max_attempts": 4, "timeout_ms": 15000 },
+          "place_block": { "max_attempts": 4, "timeout_ms": 20000 },
+          "smelt_item": { "max_attempts": 3, "timeout_ms": 90000 }
+        }
+      },
+      "expected_terminal": {
+        "outcome": "success",
+        "failure_code": "none"
+      }
+    },
+    {
+      "id": "death_respawn",
+      "description": "Bootstrap encounters lethal damage and must terminally report respawn evidence instead of false success.",
+      "mc_version": "1.21.4",
+      "server_version": "vanilla-1.21.4",
+      "seed": 12001,
+      "seed_template": {
+        "path": "world_templates/bootstrap_seed_12001",
+        "sha256": "b80efbe5a9d738b3dbc676ff207538b7edda822947b17043f72444e67f49f4a2"
+      },
+      "bot_spawn": { "x": -16.5, "y": 64.0, "z": -16.5, "yaw": 0.0, "pitch": 0.0 },
+      "difficulty": "hard",
+      "time": 13000,
+      "weather": "clear",
+      "gamerules": {
+        "doDaylightCycle": false,
+        "doWeatherCycle": false,
+        "keepInventory": false,
+        "mobGriefing": true,
+        "naturalRegeneration": true
+      },
+      "expected_initial": {
+        "health": 4,
+        "food": 8,
+        "inventory": [],
+        "world_state": {
+          "nearby_blocks": {
+            "oak_log": 6,
+            "stone": 8,
+            "coal_ore": 1,
+            "iron_ore": 1
+          },
+          "nearby_entities": [
+            { "name": "zombie", "count": 1 }
+          ],
+          "hazards": [
+            "hostile_entity"
+          ]
+        }
+      },
+      "budgets": {
+        "scenario": { "max_ticks": 2000, "max_actions": 8, "timeout_ms": 120000 },
+        "per_skill": {
+          "escape_danger": { "max_attempts": 2, "timeout_ms": 20000 },
+          "gather_visible_block": { "max_attempts": 2, "timeout_ms": 30000 },
+          "craft_item": { "max_attempts": 1, "timeout_ms": 20000 },
+          "equip_item": { "max_attempts": 1, "timeout_ms": 10000 },
+          "smelt_item": { "max_attempts": 1, "timeout_ms": 60000 }
+        }
+      },
+      "expected_terminal": {
+        "outcome": "unsafe",
+        "failure_code": "death_respawn"
+      }
+    }
+  ]
+}
+

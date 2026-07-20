@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 6,
+  "goals": [
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "workspaceId": "bf17eaf1-4c0a-4c7e-8de2-cc17e698b036",
+      "workspaceRoot": "C:\\Users\\noahj\\Downloads\\Minecraft ML",
+      "title": "push this whole project onto my github - https://github.com/jcdael/minecraftML",
+      "status": "pending",
+      "currentMilestone": "Goal created; preview not generated",
+      "acceptanceCriteria": [],
+      "allowedCommands": [],
+      "filesInScope": [],
+      "createdAt": "2026-07-20T23:47:01.484Z",
+      "updatedAt": "2026-07-20T23:47:01.484Z"
+    }
+  ],
+  "planSteps": [
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605-step-1",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "order": 0,
+      "title": "Check current git status and repository setup",
+      "status": "completed",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-20T23:47:44.272Z",
+      "updatedAt": "2026-07-20T23:47:44.272Z"
+    },
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605-step-2",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "order": 1,
+      "title": "Initialize git repository if not already done",
+      "status": "completed",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-20T23:47:44.272Z",
+      "updatedAt": "2026-07-20T23:47:44.272Z"
+    },
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605-step-3",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "order": 2,
+      "title": "Add all files to git staging",
+      "status": "running",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-20T23:47:44.272Z",
+      "updatedAt": "2026-07-20T23:47:44.272Z"
+    },
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605-step-4",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "order": 3,
+      "title": "Commit with appropriate message",
+      "status": "pending",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-20T23:47:44.272Z",
+      "updatedAt": "2026-07-20T23:47:44.272Z"
+    },
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605-step-5",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "order": 4,
+      "title": "Add remote GitHub repository",
+      "status": "pending",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-20T23:47:44.272Z",
+      "updatedAt": "2026-07-20T23:47:44.272Z"
+    },
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605-step-6",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "order": 5,
+      "title": "Push to GitHub repository",
+      "status": "pending",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-20T23:47:44.272Z",
+      "updatedAt": "2026-07-20T23:47:44.272Z"
+    },
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605-step-7",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "order": 6,
+      "title": "Verify the push was successful",
+      "status": "pending",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-20T23:47:44.272Z",
+      "updatedAt": "2026-07-20T23:47:44.272Z"
+    }
+  ],
+  "checkpoints": [],
+  "toolCalls": [],
+  "approvals": [],
+  "proposedActions": [],
+  "runLogs": [],
+  "runStates": [
+    {
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "status": "idle",
+      "message": "Waiting for deterministic preview. No autonomous execution is enabled.",
+      "updatedAt": "2026-07-20T23:47:01.484Z"
+    }
+  ],
+  "boundedGoalRuns": [],
+  "goalRunDecisions": [],
+  "commandResults": [],
+  "lessons": [],
+  "docsNotes": [],
+  "planningRequests": [],
+  "planningCycles": [],
+  "researchRequests": [],
+  "researchSources": [],
+  "chats": [
+    {
+      "id": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "goalId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "workspaceId": "bf17eaf1-4c0a-4c7e-8de2-cc17e698b036",
+      "workspaceRoot": "C:\\Users\\noahj\\Downloads\\Minecraft ML",
+      "createdAt": "2026-07-20T23:47:01.537Z",
+      "updatedAt": "2026-07-20T23:47:01.537Z",
+      "model": "deepseek/deepseek-v3.2"
+    }
+  ],
+  "chatMessages": [
+    {
+      "id": "d45d181c-de18-4cd3-bdd7-0a6c97194007",
+      "chatId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "role": "user",
+      "content": "push this whole project onto my github - https://github.com/jcdael/minecraftML",
+      "createdAt": "2026-07-20T23:47:01.547Z",
+      "status": "ok"
+    },
+    {
+      "id": "650c3cd4-561c-45be-a855-c910f6f82590",
+      "chatId": "3d339fd6-702c-46b6-a4fa-38e1d1715605",
+      "role": "assistant",
+      "content": "Sure, I'll push the whole Minecraft ML project to your GitHub repository.",
+      "createdAt": "2026-07-20T23:47:06.554Z",
+      "model": "deepseek/deepseek-v3.2",
+      "status": "ok",
+      "usage": {
+        "prompt_tokens": 560,
+        "completion_tokens": 106,
+        "total_tokens": 666,
+        "cost": 0.0001542255
+      }
+    }
+  ],
+  "executionAudits": [],
+  "trustedDependencyImageRegistrations": [],
+  "desktopOperatorSessions": [],
+  "gameModTestProfiles": [],
+  "modDeploymentPlans": [],
+  "gameTestRunbooks": [],
+  "gameTestRunbookExecutions": [],
+  "gameTestCampaigns": [],
+  "longRunningRuntimeStatuses": [],
+  "diagnosticObservationProfiles": [],
+  "diagnosticObservationEvents": [],
+  "diagnosticReports": [],
+  "verifiedProjectSkills": [],
+  "verifiedProjectSkillRetrievals": []
+}

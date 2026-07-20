@@ -1,0 +1,2 @@
+Error: Could not find or load main class .net.preferIPv4Stack=true
+Caused by: java.lang.ClassNotFoundException: /net/preferIPv4Stack=true

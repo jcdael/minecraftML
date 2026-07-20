@@ -1,0 +1,28 @@
+Starting net.minecraft.server.Main
+[14:40:57] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[14:40:58] [ServerMain/INFO]: No existing world data, creating new world
+[14:40:58] [ServerMain/INFO]: Loaded 1370 recipes
+[14:40:58] [ServerMain/INFO]: Loaded 1481 advancements
+[14:40:58] [Server thread/INFO]: Starting minecraft server version 1.21.4
+[14:40:58] [Server thread/INFO]: Loading properties
+[14:40:58] [Server thread/INFO]: Default game type: SURVIVAL
+[14:40:58] [Server thread/INFO]: Generating keypair
+[14:40:58] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[14:41:02] [Server thread/INFO]: Using default channel type
+[14:41:02] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[14:41:02] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[14:41:02] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[14:41:02] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[14:41:02] [Server thread/INFO]: Preparing level "ai-eval-seed-12001"
+[14:41:04] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[14:41:04] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[14:41:05] [Worker-Main-11/INFO]: Preparing spawn area: 2%
+[14:41:05] [Worker-Main-11/INFO]: Preparing spawn area: 40%
+[14:41:06] [Server thread/INFO]: Time elapsed: 1512 ms
+[14:41:06] [Server thread/INFO]: Done (3.892s)! For help, type "help"
+[14:41:16] [Server thread/INFO]: Learner[/127.0.0.1:60701] logged in with entity id 118 at (89.5, 69.0, 213.5)
+[14:41:16] [Server thread/INFO]: Learner joined the game
+[14:42:01] [Server thread/INFO]: Learner has made the advancement [Stone Age]
+[14:42:35] [Server thread/INFO]: Learner has made the advancement [Getting an Upgrade]
+[14:44:49] [Server thread/INFO]: Learner lost connection: Disconnected
+[14:44:49] [Server thread/INFO]: Learner left the game

@@ -1,0 +1,31 @@
+Starting net.minecraft.server.Main
+2026-07-13T06:54:14.036095Z ServerMain ERROR Unable to delete file C:\Users\noahj\Downloads\Minecraft ML\server\logs\latest.log: java.nio.file.FileSystemException C:\Users\noahj\Downloads\Minecraft ML\server\logs\latest.log: The process cannot access the file because it is being used by another process
+[02:54:17] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[02:54:17] [ServerMain/INFO]: No existing world data, creating new world
+[02:54:18] [ServerMain/INFO]: Loaded 1370 recipes
+[02:54:18] [ServerMain/INFO]: Loaded 1481 advancements
+[02:54:18] [Server thread/INFO]: Starting minecraft server version 1.21.4
+[02:54:18] [Server thread/INFO]: Loading properties
+[02:54:18] [Server thread/INFO]: Default game type: SURVIVAL
+[02:54:18] [Server thread/INFO]: Generating keypair
+[02:54:18] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[02:54:18] [Server thread/INFO]: Using default channel type
+[02:54:18] [Server thread/WARN]: **** FAILED TO BIND TO PORT!
+[02:54:18] [Server thread/WARN]: The exception was: java.net.BindException: Address already in use: bind
+[02:54:18] [Server thread/WARN]: Perhaps a server is already running on that port?
+[02:54:18] [Server thread/ERROR]: Encountered an unexpected exception
+java.lang.IllegalStateException: Failed to initialize server
+	at net.minecraft.server.MinecraftServer.y(SourceFile:735) ~[server-1.21.4.jar:?]
+	at net.minecraft.server.MinecraftServer.a(SourceFile:292) ~[server-1.21.4.jar:?]
+	at java.base/java.lang.Thread.run(Unknown Source) [?:?]
+[02:54:18] [Server thread/ERROR]: This crash report has been saved to: C:\Users\noahj\Downloads\Minecraft ML\server\crash-reports\crash-2026-07-13_02.54.18-server.txt
+[02:54:18] [Server thread/INFO]: Stopping server
+[02:54:18] [Server thread/INFO]: Saving worlds
+[02:54:18] [Server thread/ERROR]: Exception stopping the server
+java.lang.NullPointerException: Cannot invoke "ard.F_()" because "$$5" is null
+	at net.minecraft.server.MinecraftServer.a(SourceFile:575) ~[server-1.21.4.jar:?]
+	at net.minecraft.server.MinecraftServer.v(SourceFile:634) ~[server-1.21.4.jar:?]
+	at apu.v(SourceFile:543) ~[server-1.21.4.jar:?]
+	at net.minecraft.server.MinecraftServer.y(SourceFile:754) ~[server-1.21.4.jar:?]
+	at net.minecraft.server.MinecraftServer.a(SourceFile:292) ~[server-1.21.4.jar:?]
+	at java.base/java.lang.Thread.run(Unknown Source) [?:?]
