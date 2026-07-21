@@ -107,48 +107,48 @@
       "title": "Check current git status and verify branch",
       "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-21T19:48:49.381Z",
-      "updatedAt": "2026-07-21T19:48:49.381Z"
+      "createdAt": "2026-07-21T19:50:30.960Z",
+      "updatedAt": "2026-07-21T19:50:30.960Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-2",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 1,
       "title": "Stage all changes",
-      "status": "running",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-21T19:48:49.381Z",
-      "updatedAt": "2026-07-21T19:48:49.381Z"
+      "createdAt": "2026-07-21T19:50:30.960Z",
+      "updatedAt": "2026-07-21T19:50:30.960Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-3",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 2,
       "title": "Create commit with descriptive message about Fabric MVP progress",
-      "status": "pending",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-21T19:48:49.381Z",
-      "updatedAt": "2026-07-21T19:48:49.381Z"
+      "createdAt": "2026-07-21T19:50:30.960Z",
+      "updatedAt": "2026-07-21T19:50:30.960Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-4",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 3,
       "title": "Push to remote GitHub repository",
-      "status": "pending",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-21T19:48:49.381Z",
-      "updatedAt": "2026-07-21T19:48:49.381Z"
+      "createdAt": "2026-07-21T19:50:30.960Z",
+      "updatedAt": "2026-07-21T19:50:30.960Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-5",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 4,
       "title": "Verify push was successful",
-      "status": "pending",
+      "status": "running",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-21T19:48:49.381Z",
-      "updatedAt": "2026-07-21T19:48:49.381Z"
+      "createdAt": "2026-07-21T19:50:30.960Z",
+      "updatedAt": "2026-07-21T19:50:30.960Z"
     }
   ],
   "checkpoints": [
