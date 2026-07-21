@@ -1,0 +1,6 @@
+{
+  "type": "error",
+  "code": "invalid_action",
+  "message": "Action type 'invalid_type' is not supported",
+  "details": {"received_action_type": "invalid_type"}
+}

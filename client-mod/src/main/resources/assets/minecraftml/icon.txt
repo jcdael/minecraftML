@@ -1,0 +1,6 @@
+# Create a simple 64x64 PNG icon placeholder
+# This would normally be a PNG file, but we'll create a text placeholder for now
+# In a real mod, you'd create an actual PNG image
+
+echo "Creating icon placeholder..."
+# For now, we'll just create a text file indicating where the icon should go

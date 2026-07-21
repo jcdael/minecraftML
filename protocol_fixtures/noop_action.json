@@ -1,0 +1,10 @@
+{
+  "type": "action",
+  "action_id": "action_123459",
+  "skill_name": "wait",
+  "skill_args": {},
+  "action": {
+    "type": "noop",
+    "duration_ms": 1000
+  }
+}

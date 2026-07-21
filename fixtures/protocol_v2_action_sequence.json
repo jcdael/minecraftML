@@ -1,0 +1,22 @@
+{
+  "type": "action",
+  "data": {
+    "action_type": "sequence",
+    "parameters": {
+      "actions": [
+        {
+          "action_type": "control",
+          "parameters": {"forward": true, "jump": true},
+          "duration_ticks": 10
+        },
+        {
+          "action_type": "look_delta",
+          "parameters": {"yaw_delta": 90.0, "pitch_delta": 0.0},
+          "duration_ticks": 5
+        }
+      ]
+    },
+    "duration_ticks": 15
+  },
+  "timestamp": 1678901234570
+}

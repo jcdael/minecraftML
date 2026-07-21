@@ -6,7 +6,7 @@ import sqlite3
 from typing import Any
 
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 5
 
 
 class ExperienceStore:
@@ -100,6 +100,25 @@ class ExperienceStore:
 
     def _migrate_to_4(self) -> None:
         self._migrate_to_3()
+
+    def _migrate_to_5(self) -> None:
+        self._migrate_to_4()
+        self.connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS policy_updates (
+                action_id TEXT PRIMARY KEY,
+                timestamp TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                skill_name TEXT NOT NULL,
+                skill_args_json TEXT NOT NULL,
+                state_before_json TEXT NOT NULL,
+                selected_action_json TEXT NOT NULL,
+                reward REAL NOT NULL,
+                agent_policy_version TEXT NOT NULL,
+                exploration_bandit TEXT,
+                exploration_parameters_json TEXT
+            )
+            """
+        )
 
     def _ensure_column(self, table: str, column: str, definition: str) -> None:
         columns = {row[1] for row in self.connection.execute(f"PRAGMA table_info({table})").fetchall()}
@@ -239,8 +258,43 @@ class ExperienceStore:
                 ),
             )
 
+    def add_policy_update(
+        self,
+        *,
+        action_id: str,
+        skill_name: str,
+        skill_args: dict[str, Any],
+        state_before: dict[str, Any],
+        selected_action: dict[str, Any],
+        reward: float,
+        agent_policy_version: str,
+        exploration_bandit: str | None = None,
+        exploration_parameters: dict[str, Any] | None = None,
+    ) -> None:
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT OR REPLACE INTO policy_updates
+                    (action_id, skill_name, skill_args_json, state_before_json,
+                     selected_action_json, reward, agent_policy_version,
+                     exploration_bandit, exploration_parameters_json)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    action_id,
+                    skill_name,
+                    json.dumps(skill_args, separators=(",", ":"), sort_keys=True),
+                    json.dumps(state_before, separators=(",", ":"), sort_keys=True),
+                    json.dumps(selected_action, separators=(",", ":"), sort_keys=True),
+                    float(reward),
+                    agent_policy_version,
+                    exploration_bandit,
+                    json.dumps(exploration_parameters, separators=(",", ":"), sort_keys=True) if exploration_parameters else None,
+                ),
+            )
+
     def count(self) -> int:
-        row = self.connection.execute("SELECT COUNT(*) FROM skill_attempts").fetchone()
+        row = self.connection.execute("SELECT COUNT(*) FROM skill_attempts").fetchall()
         return int(row[0]) if row else 0
 
     def close(self) -> None:

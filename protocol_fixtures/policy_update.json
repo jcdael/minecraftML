@@ -1,0 +1,8 @@
+{
+  "type": "policy_update",
+  "action_id": "action_123456",
+  "reward": 0.5,
+  "agent_policy_version": "v1.0",
+  "exploration_bandit": "UCB",
+  "exploration_parameters": {"c": 2.0}
+}

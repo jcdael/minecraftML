@@ -1,0 +1,19 @@
+{
+  "category.minecraftml.control": "MinecraftML Control",
+  "category.minecraftml.debug": "MinecraftML Debug",
+  "category.minecraftml.ai": "MinecraftML AI Keys",
+  
+  "key.minecraftml.toggle_ai_control": "Toggle AI Control System",
+  "key.minecraftml.activate_ai_control": "Activate/Deactivate AI Control",
+  "key.minecraftml.toggle_debug": "Toggle Debug Mode",
+  
+  "key.minecraftml.ai_forward": "AI Forward",
+  "key.minecraftml.ai_back": "AI Back",
+  "key.minecraftml.ai_left": "AI Left",
+  "key.minecraftml.ai_right": "AI Right",
+  "key.minecraftml.ai_jump": "AI Jump",
+  "key.minecraftml.ai_sneak": "AI Sneak",
+  "key.minecraftml.ai_sprint": "AI Sprint",
+  "key.minecraftml.ai_attack": "AI Attack",
+  "key.minecraftml.ai_use": "AI Use"
+}

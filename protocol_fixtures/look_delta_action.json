@@ -1,0 +1,11 @@
+{
+  "type": "action",
+  "action_id": "action_123457",
+  "skill_name": "look_around",
+  "skill_args": {},
+  "action": {
+    "type": "look_delta",
+    "yaw": 45.0,
+    "pitch": -10.0
+  }
+}

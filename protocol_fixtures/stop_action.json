@@ -1,0 +1,9 @@
+{
+  "type": "action",
+  "action_id": "action_123460",
+  "skill_name": "emergency_stop",
+  "skill_args": {},
+  "action": {
+    "type": "stop"
+  }
+}

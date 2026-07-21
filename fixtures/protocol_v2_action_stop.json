@@ -1,0 +1,9 @@
+{
+  "type": "action",
+  "data": {
+    "action_type": "stop",
+    "parameters": {},
+    "duration_ticks": 0
+  },
+  "timestamp": 1678901234571
+}

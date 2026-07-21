@@ -5,7 +5,7 @@ import re
 from typing import Any, Literal
 
 
-GoalKind = Literal["gather", "bootstrap", "unsupported", "unknown"]
+GoalKind = Literal["gather", "bootstrap", "explore", "unsupported", "unknown"]
 
 
 @dataclass(slots=True)
@@ -20,6 +20,8 @@ class Goal:
             return f"gather {self.parameters['count']} {self.parameters['item']}"
         if self.kind == "bootstrap":
             return f"bootstrap {self.parameters['count']} {self.parameters['item']}"
+        if self.kind == "explore":
+            return f"explore {self.parameters.get('radius', 100)} blocks"
         if self.kind == "unsupported":
             return f"unsupported goal: {self.raw_text}"
         return "unknown goal"
@@ -45,6 +47,12 @@ def parse_goal(text: str) -> Goal:
         return Goal("unsupported", raw, unsupported_reason="beat_dragon is out of scope for Phase 1")
     if "house" in lowered or "base" in lowered or "build" in lowered:
         return Goal("unsupported", raw, unsupported_reason="building is out of scope for Phase 1")
+
+    # Explore goal - explore a certain radius
+    explore_match = re.fullmatch(r"explore\s+(?:(\d+)\s+)?(?:blocks?|radius)?", lowered)
+    if explore_match:
+        radius = int(explore_match.group(1) or 100)
+        return Goal("explore", raw, {"radius": radius})
 
     bootstrap_match = re.fullmatch(r"bootstrap\s+(?:(\d+)\s+)?iron_ingot", lowered)
     if bootstrap_match:

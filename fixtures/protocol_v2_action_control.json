@@ -1,0 +1,19 @@
+{
+  "type": "action",
+  "data": {
+    "action_type": "control",
+    "parameters": {
+      "forward": true,
+      "backward": false,
+      "left": false,
+      "right": true,
+      "jump": false,
+      "sneak": false,
+      "sprint": true,
+      "attack": false,
+      "use": false
+    },
+    "duration_ticks": 20
+  },
+  "timestamp": 1678901234568
+}

@@ -1,0 +1,12 @@
+{
+  "type": "action",
+  "data": {
+    "action_type": "look_delta",
+    "parameters": {
+      "yaw_delta": 45.0,
+      "pitch_delta": -15.0
+    },
+    "duration_ticks": 5
+  },
+  "timestamp": 1678901234569
+}

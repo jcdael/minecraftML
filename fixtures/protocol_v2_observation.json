@@ -1,0 +1,39 @@
+{
+  "type": "observation",
+  "data": {
+    "player": {
+      "position": {
+        "x": 100.5,
+        "y": 64.0,
+        "z": -200.3
+      },
+      "rotation": {
+        "yaw": 45.0,
+        "pitch": -10.0
+      },
+      "health": 20.0,
+      "food_level": 20,
+      "is_alive": true,
+      "inventory": [
+        {"slot": 0, "name": "oak_log", "count": 3},
+        {"slot": 1, "name": "crafting_table", "count": 1},
+        {"slot": 2, "name": "wooden_pickaxe", "count": 1}
+      ]
+    },
+    "world": {
+      "time_of_day": 6000,
+      "is_raining": false,
+      "visible_blocks": [
+        {"x": 101, "y": 64, "z": -200, "name": "grass_block", "distance": 1.5},
+        {"x": 102, "y": 64, "z": -200, "name": "oak_log", "distance": 2.5},
+        {"x": 100, "y": 65, "z": -199, "name": "stone", "distance": 1.8}
+      ],
+      "nearby_entities": [
+        {"type": "cow", "distance": 5.0, "position": {"x": 105.0, "y": 64.0, "z": -195.0}}
+      ]
+    },
+    "action_running": null,
+    "action_queue": []
+  },
+  "timestamp": 1678901234567
+}

@@ -1,0 +1,9 @@
+{
+  "type": "action",
+  "data": {
+    "action_type": "noop",
+    "parameters": {},
+    "duration_ticks": 1
+  },
+  "timestamp": 1678901234572
+}

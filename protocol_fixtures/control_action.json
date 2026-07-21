@@ -1,0 +1,16 @@
+{
+  "type": "action",
+  "action_id": "action_123456",
+  "skill_name": "explore",
+  "skill_args": {"radius": 10},
+  "action": {
+    "type": "control",
+    "forward": 1.0,
+    "strafe": 0.0,
+    "jump": false,
+    "sneak": false,
+    "sprint": false,
+    "attack": false,
+    "use": false
+  }
+}

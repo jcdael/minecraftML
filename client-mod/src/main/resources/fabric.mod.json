@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "minecraftml",
+  "version": "0.1.0",
+  "name": "MinecraftML",
+  "description": "Fabric mod for local-player AI training with fail-closed safety",
+  "authors": ["jcdael"],
+  "contact": {
+    "sources": "https://github.com/jcdael/minecraftML"
+  },
+  "license": "MIT",
+  "icon": "assets/minecraftml/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.jcdael.minecraftml.MinecraftMLMod"]
+  },
+  "mixins": [
+    "minecraftml.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "fabric": "*",
+    "minecraft": "1.21.4",
+    "java": ">=21"
+  }
+}

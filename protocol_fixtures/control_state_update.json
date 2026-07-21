@@ -1,0 +1,5 @@
+{
+  "type": "control_state",
+  "state": "ACTIVE",
+  "reason": "manual_override_detected"
+}

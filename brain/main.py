@@ -10,6 +10,7 @@ from typing import Any
 import websockets
 
 from agent import SessionAgent
+from goals import parse_goal
 from protocol import PROTOCOL_VERSION, validate_message
 
 if sys.platform == "win32":
@@ -20,7 +21,9 @@ DATA_DIR = Path(os.environ.get("BRAIN_DATA_DIR", ROOT / "data"))
 HOST = "127.0.0.1"
 PORT = int(os.environ.get("BRAIN_PORT", "8765"))
 
-agent = SessionAgent(DATA_DIR)
+# Initialize with a default explore goal
+default_goal = parse_goal("explore 100 blocks")
+agent = SessionAgent(default_goal)
 print(f"Minecraft AI brain initialized with data dir {DATA_DIR}", flush=True)
 
 

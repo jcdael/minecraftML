@@ -1,0 +1,9 @@
+{
+  "type": "hello",
+  "protocol_version": "2.0",
+  "capabilities": {
+    "observation_fields": ["position", "velocity", "health", "inventory", "nearby_blocks", "nearby_entities"],
+    "action_types": ["control", "look_delta", "sequence", "noop", "stop"],
+    "control_states": ["OFF", "READY", "ACTIVE", "PAUSED", "MANUAL_OVERRIDE", "EMERGENCY_LATCHED", "FAULTED"]
+  }
+}

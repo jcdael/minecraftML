@@ -1,0 +1,15 @@
+{
+  "type": "action",
+  "action_id": "action_123458",
+  "skill_name": "mine_block",
+  "skill_args": {"block_type": "minecraft:stone"},
+  "action": {
+    "type": "sequence",
+    "steps": [
+      {"type": "control", "forward": 1.0, "strafe": 0.0, "jump": false, "sneak": false, "sprint": false, "attack": false, "use": false},
+      {"type": "look_delta", "yaw": 90.0, "pitch": 0.0},
+      {"type": "control", "forward": 0.0, "strafe": 0.0, "jump": false, "sneak": false, "sprint": false, "attack": true, "use": false}
+    ],
+    "step_duration_ms": 100
+  }
+}
