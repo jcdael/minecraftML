@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'fabric-loom' version '1.6.6'
     id 'maven-publish'
 }
 
@@ -23,12 +23,12 @@ repositories {
 }
 
 loom {
-    splitEnvironmentSourceSets()
+    // Removed splitEnvironmentSourceSets() since this is a client-only mod
+    // All code is in src/main/java
 
     mods {
         "minecraftml" {
             sourceSet sourceSets.main
-            sourceSet sourceSets.client
         }
     }
 }
@@ -42,7 +42,8 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     
-    // Gson for JSON serialization
+    // Gson for JSON serialization - using implementation instead of modImplementation
+    // since Minecraft/Fabric already provides Gson
     implementation 'com.google.code.gson:gson:2.10.1'
 }
 

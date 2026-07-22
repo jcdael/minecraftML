@@ -6,7 +6,7 @@ import math
 from typing import Any
 
 
-PROTOCOL_VERSION = 1
+PROTOCOL_VERSION = 2
 MAX_ABS_COORD = 30_000_000
 MAX_DURATION_MS = 180_000
 MAX_SEQUENCE_STEPS = 8
@@ -44,7 +44,7 @@ LIFECYCLE_ORDER = [
 REQUIRED_LIFECYCLE_EVENTS = {"execution_settled", "post_stop_probe_completed", "terminal_result"}
 DANGERS = {"drowning", "fire", "fall", None}
 COMMANDS = {"pause", "resume", "status"}
-ADAPTER_ROLE = "mineflayer_adapter"
+ADAPTER_ROLE = "fabric_local_player"
 
 
 class ProtocolError(ValueError):

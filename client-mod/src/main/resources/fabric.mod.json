@@ -9,7 +9,6 @@
     "sources": "https://github.com/jcdael/minecraftML"
   },
   "license": "MIT",
-  "icon": "assets/minecraftml/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": ["com.jcdael.minecraftml.MinecraftMLMod"]
