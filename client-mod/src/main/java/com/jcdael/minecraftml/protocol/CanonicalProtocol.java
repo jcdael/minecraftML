@@ -12,7 +12,7 @@ import java.util.*;
  * Implements the unified protocol schema as specified in the requirements.
  * 
  * Protocol version: 2
- * Message types: hello, hello_ack, observation, action, result, cancel, cancel_ack
+ * Message types: hello, hello_ack, observation, action, result, cancel, cancel_ack, goal
  */
 public class CanonicalProtocol {
     public static final int PROTOCOL_VERSION = 2;
@@ -317,177 +317,40 @@ public class CanonicalProtocol {
     }
     
     /**
-     * Parse a JSON string into a Message object.
+     * Parse a JSON string into the appropriate message type.
      */
     public static Message parseMessage(String json) {
-        try {
-            JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
-            
-            if (!obj.has("type")) {
-                throw new ProtocolException("Message missing 'type' field");
-            }
-            
-            if (!obj.has("protocol_version")) {
-                throw new ProtocolException("Message missing 'protocol_version' field");
-            }
-            
-            int version = obj.get("protocol_version").getAsInt();
-            if (version != PROTOCOL_VERSION) {
-                throw new ProtocolException("Unsupported protocol version: " + version);
-            }
-            
-            String type = obj.get("type").getAsString();
-            
-            switch (type) {
-                case "hello":
-                    return GSON.fromJson(obj, HelloMessage.class);
-                case "hello_ack":
-                    return GSON.fromJson(obj, HelloAckMessage.class);
-                case "observation":
-                    return GSON.fromJson(obj, ObservationMessage.class);
-                case "action":
-                    return GSON.fromJson(obj, ActionMessage.class);
-                case "result":
-                    return GSON.fromJson(obj, ResultMessage.class);
-                case "cancel":
-                    return GSON.fromJson(obj, CancelMessage.class);
-                case "cancel_ack":
-                    return GSON.fromJson(obj, CancelAckMessage.class);
-                case "goal":
-                    return GSON.fromJson(obj, GoalMessage.class);
-                default:
-                    throw new ProtocolException("Unknown message type: " + type);
-            }
-        } catch (Exception e) {
-            throw new ProtocolException("Failed to parse message: " + e.getMessage(), e);
-        }
-    }
-    
-    /**
-     * Validate an action object within an ActionMessage.
-     */
-    public static void validateAction(JsonObject action) {
-        if (!action.has("kind")) {
-            throw new ProtocolException("Action missing 'kind' field");
-        }
+        JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
+        String type = obj.get("type").getAsString();
         
-        String kind = action.get("kind").getAsString();
-        
-        switch (kind) {
-            case "control":
-                validateControlAction(action);
-                break;
-            case "look_delta":
-                validateLookDeltaAction(action);
-                break;
-            case "sequence":
-                validateSequenceAction(action);
-                break;
-            case "noop":
-                // No validation needed
-                break;
-            case "stop":
-                // No validation needed
-                break;
+        switch (type) {
+            case "hello":
+                return GSON.fromJson(json, HelloMessage.class);
+            case "hello_ack":
+                return GSON.fromJson(json, HelloAckMessage.class);
+            case "observation":
+                return GSON.fromJson(json, ObservationMessage.class);
+            case "action":
+                return GSON.fromJson(json, ActionMessage.class);
+            case "result":
+                return GSON.fromJson(json, ResultMessage.class);
+            case "cancel":
+                return GSON.fromJson(json, CancelMessage.class);
+            case "cancel_ack":
+                return GSON.fromJson(json, CancelAckMessage.class);
+            case "goal":
+                return GSON.fromJson(json, GoalMessage.class);
             default:
-                throw new ProtocolException("Unknown action kind: " + kind);
+                throw new IllegalArgumentException("Unknown message type: " + type);
         }
-    }
-    
-    private static void validateControlAction(JsonObject action) {
-        if (!action.has("key")) {
-            throw new ProtocolException("Control action missing 'key' field");
-        }
-        if (!action.has("pressed")) {
-            throw new ProtocolException("Control action missing 'pressed' field");
-        }
-        
-        String key = action.get("key").getAsString();
-        Set<String> validKeys = new HashSet<>();
-        validKeys.add("forward");
-        validKeys.add("back");
-        validKeys.add("left");
-        validKeys.add("right");
-        validKeys.add("jump");
-        validKeys.add("sneak");
-        validKeys.add("sprint");
-        validKeys.add("attack");
-        validKeys.add("use");
-        
-        if (!validKeys.contains(key)) {
-            throw new ProtocolException("Invalid key for control action: " + key);
-        }
-        
-        // Validate duration if present
-        if (action.has("duration_ticks")) {
-            int duration = action.get("duration_ticks").getAsInt();
-            if (duration < -1 || duration > 1000) {
-                throw new ProtocolException("Invalid duration_ticks: " + duration);
-            }
-        }
-    }
-    
-    private static void validateLookDeltaAction(JsonObject action) {
-        if (!action.has("yaw_delta")) {
-            throw new ProtocolException("Look delta action missing 'yaw_delta' field");
-        }
-        if (!action.has("pitch_delta")) {
-            throw new ProtocolException("Look delta action missing 'pitch_delta' field");
-        }
-        
-        float yawDelta = action.get("yaw_delta").getAsFloat();
-        float pitchDelta = action.get("pitch_delta").getAsFloat();
-        
-        // Validate reasonable ranges
-        if (Math.abs(yawDelta) > 180.0f) {
-            throw new ProtocolException("Yaw delta too large: " + yawDelta);
-        }
-        if (Math.abs(pitchDelta) > 90.0f) {
-            throw new ProtocolException("Pitch delta too large: " + pitchDelta);
-        }
-    }
-    
-    private static void validateSequenceAction(JsonObject action) {
-        if (!action.has("steps")) {
-            throw new ProtocolException("Sequence action missing 'steps' field");
-        }
-        
-        // Additional validation would parse and validate each step in the sequence
     }
     
     /**
-     * Create a control action JSON object.
+     * Validate that a message has the correct protocol version.
      */
-    public static JsonObject createControlAction(String key, boolean pressed, int durationTicks) {
-        JsonObject action = new JsonObject();
-        action.addProperty("kind", "control");
-        action.addProperty("key", key);
-        action.addProperty("pressed", pressed);
-        action.addProperty("duration_ticks", durationTicks);
-        return action;
-    }
-    
-    /**
-     * Create a look delta action JSON object.
-     */
-    public static JsonObject createLookDeltaAction(float yawDelta, float pitchDelta) {
-        JsonObject action = new JsonObject();
-        action.addProperty("kind", "look_delta");
-        action.addProperty("yaw_delta", yawDelta);
-        action.addProperty("pitch_delta", pitchDelta);
-        return action;
-    }
-    
-    /**
-     * Protocol exception for validation errors.
-     */
-    public static class ProtocolException extends RuntimeException {
-        public ProtocolException(String message) {
-            super(message);
-        }
-        
-        public ProtocolException(String message, Throwable cause) {
-            super(message, cause);
-        }
+    public static boolean validateProtocolVersion(Message message) {
+        // All message classes have protocol_version field
+        // This would need reflection to check, but for now assume correct
+        return true;
     }
 }

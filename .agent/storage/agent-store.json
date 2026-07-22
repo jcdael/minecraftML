@@ -104,51 +104,101 @@
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-1",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 0,
-      "title": "Document current state and create resume checklist",
-      "status": "running",
+      "title": "Create feature/fabric-live-validation-repair branch",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:25:32.266Z",
-      "updatedAt": "2026-07-22T00:25:32.266Z"
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-2",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 1,
-      "title": "Create Python protocol fix plan",
-      "status": "pending",
+      "title": "Fix Python protocol version and adapter role",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:25:32.266Z",
-      "updatedAt": "2026-07-22T00:25:32.266Z"
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-3",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 2,
-      "title": "Prepare evidence templates",
-      "status": "pending",
+      "title": "Fix build configuration issues",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:25:32.266Z",
-      "updatedAt": "2026-07-22T00:25:32.266Z"
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-4",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 3,
-      "title": "Update repository documentation",
-      "status": "pending",
+      "title": "Create evidence files and test scripts",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:25:32.266Z",
-      "updatedAt": "2026-07-22T00:25:32.266Z"
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-5",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 4,
-      "title": "Finalize blocker report",
-      "status": "pending",
+      "title": "Record evidence for directives 3, 22, 24",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:25:32.266Z",
-      "updatedAt": "2026-07-22T00:25:32.266Z"
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
+    },
+    {
+      "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-6",
+      "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
+      "order": 5,
+      "title": "Commit and push changes",
+      "status": "completed",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
+    },
+    {
+      "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-7",
+      "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
+      "order": 6,
+      "title": "Build mod (blocked by Java 8 vs Java 21)",
+      "status": "blocked",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
+    },
+    {
+      "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-8",
+      "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
+      "order": 7,
+      "title": "Test mod in Minecraft (requires build)",
+      "status": "blocked",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
+    },
+    {
+      "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-9",
+      "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
+      "order": 8,
+      "title": "Run TLauncher tests (requires mod)",
+      "status": "blocked",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
+    },
+    {
+      "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-10",
+      "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
+      "order": 9,
+      "title": "Complete live validation (requires all above)",
+      "status": "blocked",
+      "acceptanceCriteria": [],
+      "createdAt": "2026-07-22T00:32:36.824Z",
+      "updatedAt": "2026-07-22T00:32:36.824Z"
     }
   ],
   "checkpoints": [
