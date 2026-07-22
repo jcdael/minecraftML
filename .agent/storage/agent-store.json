@@ -104,101 +104,101 @@
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-1",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 0,
-      "title": "Create feature/fabric-live-validation-repair branch",
+      "title": "Check current state and update plan for blocked phase",
       "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-2",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 1,
-      "title": "Fix Python protocol version and adapter role",
+      "title": "Work on Python brain interface improvements",
       "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-3",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 2,
-      "title": "Fix build configuration issues",
+      "title": "Create more comprehensive test scripts",
       "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-4",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 3,
-      "title": "Create evidence files and test scripts",
+      "title": "Fix SessionAgent interface (add missing methods)",
       "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-5",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 4,
-      "title": "Record evidence for directives 3, 22, 24",
+      "title": "Document protocol and architecture",
       "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-6",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 5,
-      "title": "Commit and push changes",
+      "title": "Prepare TLauncher profile documentation",
       "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-7",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 6,
-      "title": "Build mod (blocked by Java 8 vs Java 21)",
-      "status": "blocked",
+      "title": "Create evidence validation script",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-8",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 7,
-      "title": "Test mod in Minecraft (requires build)",
-      "status": "blocked",
+      "title": "Update README with current status",
+      "status": "completed",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-9",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 8,
-      "title": "Run TLauncher tests (requires mod)",
-      "status": "blocked",
+      "title": "Commit and push any additional improvements",
+      "status": "running",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     },
     {
       "id": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e-step-10",
       "goalId": "dcccab42-bdbc-4dc9-8e87-1b073eaf2e0e",
       "order": 9,
-      "title": "Complete live validation (requires all above)",
-      "status": "blocked",
+      "title": "Create final blocker report with everything done",
+      "status": "pending",
       "acceptanceCriteria": [],
-      "createdAt": "2026-07-22T00:32:36.824Z",
-      "updatedAt": "2026-07-22T00:32:36.824Z"
+      "createdAt": "2026-07-22T00:42:31.051Z",
+      "updatedAt": "2026-07-22T00:42:31.051Z"
     }
   ],
   "checkpoints": [

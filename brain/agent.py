@@ -5,6 +5,7 @@ import logging
 import math
 import random
 import time
+import uuid
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -12,6 +13,7 @@ from typing import Any, Literal
 
 from goals import Goal, parse_goal
 from learner import PersistentUCBBandit
+from memory import ExperienceStore
 from skills import (
     CollectItemSkill,
     CraftItemSkill,
@@ -46,11 +48,190 @@ class SessionAgent:
     total_reward: float = 0.0
     last_action: dict[str, Any] | None = None
     last_action_result: dict[str, Any] | None = None
+    memory: ExperienceStore = field(default_factory=lambda: ExperienceStore(Path("data/experience.db")))
+    is_paused: bool = False
+    active_action_id: str | None = None
+    last_observation_state: dict[str, Any] | None = None
 
     def __post_init__(self) -> None:
         logger.info("SessionAgent created for goal: %s", self.goal.describe())
         self.learner.load()
 
+    # New methods required by main.py
+    def on_adapter_disconnect(self) -> None:
+        """Called when adapter disconnects."""
+        logger.info("Adapter disconnected, resetting agent state")
+        self.active_action_id = None
+        self.current_step = None
+        self.step_start_time = None
+        self.is_paused = True  # Pause when disconnected
+
+    def request_cancel_active(self, reason: str) -> str | None:
+        """Cancel active action and return its action_id."""
+        logger.info(f"Requesting cancel of active action: {reason}")
+        action_id = self.active_action_id
+        self.active_action_id = None
+        self.current_step = None
+        self.step_start_time = None
+        return action_id
+
+    def set_goal(self, text: str) -> str:
+        """Parse and set new goal."""
+        try:
+            new_goal = parse_goal(text)
+            self.goal = new_goal
+            logger.info(f"Goal set to: {self.goal.describe()}")
+            return f"Goal set: {self.goal.describe()}"
+        except Exception as e:
+            logger.error(f"Failed to parse goal '{text}': {e}")
+            return f"Error parsing goal: {e}"
+
+    def set_paused(self, paused: bool) -> str:
+        """Pause or resume the agent."""
+        self.is_paused = paused
+        status = "paused" if paused else "resumed"
+        logger.info(f"Agent {status}")
+        return f"Agent {status}"
+
+    def status(self) -> str:
+        """Return status string."""
+        return (
+            f"Goal: {self.goal.describe()}, "
+            f"Paused: {self.is_paused}, "
+            f"Active action: {self.active_action_id}, "
+            f"Steps completed: {len(self.steps)}, "
+            f"Total reward: {self.total_reward:.2f}"
+        )
+
+    def active_action_id(self) -> str | None:
+        """Return current action ID or None."""
+        return self.active_action_id
+
+    def next_action(self, state: dict[str, Any]) -> tuple[str, dict[str, Any]] | None:
+        """Get next action based on state, return (action_id, action)."""
+        if self.is_paused:
+            logger.debug("Agent is paused, not returning action")
+            return None
+        
+        if self.active_action_id is not None:
+            logger.debug("Action already active, not returning new action")
+            return None
+        
+        self.state = state.copy()
+        self.last_observation_state = state.copy()
+        
+        # Update reward based on current state
+        self.update_reward()
+        
+        # Choose a new skill
+        skill = self.choose_skill()
+        if skill is None:
+            logger.warning("No skill chosen")
+            return None
+        
+        # Check if skill can start
+        can_start = skill.can_start(self.state)
+        if can_start.status != "success":
+            logger.warning("Skill %s cannot start: %s", skill.name, can_start.failure_code or can_start.status)
+            
+            # If it's a stop skill that can't start, still execute it
+            if isinstance(skill, StopSkill):
+                action = skill.build_action(self.state)
+            else:
+                # Try a recovery skill instead
+                recovery = RecoverStuckSkill()
+                recovery_can_start = recovery.can_start(self.state)
+                if recovery_can_start.status == "success":
+                    skill = recovery
+                else:
+                    # Fall back to stop
+                    skill = StopSkill("cannot_start_any_skill")
+                action = skill.build_action(self.state)
+        else:
+            action = skill.build_action(self.state)
+        
+        # Generate action ID
+        action_id = str(uuid.uuid4())
+        self.active_action_id = action_id
+        
+        # Record as current step
+        self.current_step = SkillStep(
+            skill_name=skill.name,
+            args={},
+            action=action,
+            timeout_ms=skill.timeout_ms,
+            pre_state=self.state.copy(),
+            retry_budget=3,
+        )
+        self.current_step.skill_instance = skill  # type: ignore
+        self.step_start_time = time.time()
+        self.step_retries_left = 3
+        
+        logger.info(f"Generated action {action_id}: {action.get('kind', 'unknown')}")
+        return action_id, action
+
+    def on_result(self, message: dict[str, Any]) -> SkillResult | None:
+        """Process result message."""
+        action_id = message.get("action_id")
+        if action_id != self.active_action_id:
+            logger.warning(f"Result for unknown action ID: {action_id}")
+            return None
+        
+        ok = message.get("ok", False)
+        code = message.get("code", "unknown")
+        
+        # Create skill result
+        skill_result = SkillResult(
+            status="success" if ok else "failure",
+            failure_code=None if ok else code,
+            elapsed_ms=message.get("elapsed_ms", 0),
+            result=message
+        )
+        
+        # Record the step
+        if self.current_step and self.step_start_time:
+            self.record_step(
+                skill=self.current_step.skill_instance,
+                action=self.current_step.action,
+                result=message,
+                skill_result=skill_result
+            )
+        
+        # Clear active action
+        self.active_action_id = None
+        self.current_step = None
+        self.step_start_time = None
+        
+        # Update bandit with reward
+        if self.current_step and isinstance(self.current_step.skill_instance, ExploreSearchSkill):
+            strategy = self.current_step.skill_instance.strategy
+            reward = self.reward_accumulator
+            self.learner.record_attempt(strategy, reward)
+            self.reward_accumulator = 0.0
+        
+        logger.info(f"Processed result for action {action_id}: ok={ok}, code={code}")
+        return skill_result
+
+    def on_cancel_ack(self, message: dict[str, Any]) -> None:
+        """Process cancel acknowledgment."""
+        action_id = message.get("action_id")
+        ok = message.get("ok", False)
+        logger.info(f"Cancel acknowledgment for action {action_id}: ok={ok}")
+        
+        if action_id == self.active_action_id:
+            self.active_action_id = None
+            self.current_step = None
+            self.step_start_time = None
+
+    def on_death(self, action_id: str | None) -> None:
+        """Handle player death."""
+        logger.info(f"Player death recorded, action_id={action_id}")
+        self.is_paused = True
+        self.active_action_id = None
+        self.current_step = None
+        self.step_start_time = None
+
+    # Original methods
     def choose_skill(self) -> Skill | None:
         """Choose the next skill to execute based on current state and goal."""
         if self.goal.kind == "gather":
@@ -211,11 +392,6 @@ class SessionAgent:
         self.reward_accumulator += reward
         self.total_reward += reward
         self.last_reward_time = now
-        
-        # Update bandit if we have a current strategy
-        if self.current_step and isinstance(self.current_step.skill_instance, ExploreSearchSkill):
-            strategy = self.current_step.skill_instance.strategy
-            self.learner.record_attempt(strategy, reward)
 
     def record_step(
         self,
@@ -334,59 +510,3 @@ class SessionAgent:
         self.step_retries_left = 3
         
         return action
-
-    def update_state(self, observation: dict[str, Any]) -> None:
-        """Update internal state from observation."""
-        self.state.update(observation)
-        
-        # Track movement activity
-        if "position" in observation:
-            self.state["movement_active"] = True
-        else:
-            # Randomly clear movement flag to simulate inactivity detection
-            if random.random() < 0.05:
-                self.state["movement_active"] = False
-
-    def is_complete(self) -> bool:
-        """Check if the session is complete."""
-        if self.goal.kind == "gather":
-            item = self.goal.parameters["item"]
-            target_count = self.goal.parameters["count"]
-            inventory = inventory_counts(self.state)
-            current_count = inventory.get(item, 0)
-            return current_count >= target_count
-        
-        if self.goal.kind == "bootstrap":
-            item = self.goal.parameters["item"]
-            target_count = self.goal.parameters["count"]
-            inventory = inventory_counts(self.state)
-            current_count = inventory.get(item, 0)
-            return current_count >= target_count
-        
-        if self.goal.kind == "explore":
-            # Exploration goals are never "complete" - they run until stopped
-            return False
-        
-        # For unsupported or unknown goals, consider complete
-        return True
-
-    def get_stats(self) -> dict[str, Any]:
-        """Get session statistics."""
-        elapsed = time.time() - self.session_start_time
-        return {
-            "goal": self.goal.describe(),
-            "steps_completed": len(self.steps),
-            "total_reward": self.total_reward,
-            "current_reward": self.reward_accumulator,
-            "elapsed_seconds": elapsed,
-            "current_step": self.current_step.skill_name if self.current_step else None,
-            "state_keys": list(self.state.keys()),
-        }
-
-    def save(self) -> None:
-        """Save session state."""
-        # Save bandit state
-        self.learner.save()
-        
-        # Could save session state here if needed
-        pass
