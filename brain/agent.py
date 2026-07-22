@@ -50,7 +50,7 @@ class SessionAgent:
     last_action_result: dict[str, Any] | None = None
     memory: ExperienceStore = field(default_factory=lambda: ExperienceStore(Path("data/experience.db")))
     is_paused: bool = False
-    active_action_id: str | None = None
+    _active_action_id: str | None = None  # Changed from active_action_id to _active_action_id
     last_observation_state: dict[str, Any] | None = None
 
     def __post_init__(self) -> None:
@@ -61,7 +61,7 @@ class SessionAgent:
     def on_adapter_disconnect(self) -> None:
         """Called when adapter disconnects."""
         logger.info("Adapter disconnected, resetting agent state")
-        self.active_action_id = None
+        self._active_action_id = None
         self.current_step = None
         self.step_start_time = None
         self.is_paused = True  # Pause when disconnected
@@ -69,8 +69,8 @@ class SessionAgent:
     def request_cancel_active(self, reason: str) -> str | None:
         """Cancel active action and return its action_id."""
         logger.info(f"Requesting cancel of active action: {reason}")
-        action_id = self.active_action_id
-        self.active_action_id = None
+        action_id = self._active_action_id
+        self._active_action_id = None
         self.current_step = None
         self.step_start_time = None
         return action_id
@@ -98,14 +98,14 @@ class SessionAgent:
         return (
             f"Goal: {self.goal.describe()}, "
             f"Paused: {self.is_paused}, "
-            f"Active action: {self.active_action_id}, "
+            f"Active action: {self._active_action_id}, "
             f"Steps completed: {len(self.steps)}, "
             f"Total reward: {self.total_reward:.2f}"
         )
 
     def active_action_id(self) -> str | None:
         """Return current action ID or None."""
-        return self.active_action_id
+        return self._active_action_id
 
     def next_action(self, state: dict[str, Any]) -> tuple[str, dict[str, Any]] | None:
         """Get next action based on state, return (action_id, action)."""
@@ -113,7 +113,7 @@ class SessionAgent:
             logger.debug("Agent is paused, not returning action")
             return None
         
-        if self.active_action_id is not None:
+        if self._active_action_id is not None:
             logger.debug("Action already active, not returning new action")
             return None
         
@@ -152,7 +152,7 @@ class SessionAgent:
         
         # Generate action ID
         action_id = str(uuid.uuid4())
-        self.active_action_id = action_id
+        self._active_action_id = action_id
         
         # Record as current step
         self.current_step = SkillStep(
@@ -173,7 +173,7 @@ class SessionAgent:
     def on_result(self, message: dict[str, Any]) -> SkillResult | None:
         """Process result message."""
         action_id = message.get("action_id")
-        if action_id != self.active_action_id:
+        if action_id != self._active_action_id:
             logger.warning(f"Result for unknown action ID: {action_id}")
             return None
         
@@ -198,7 +198,7 @@ class SessionAgent:
             )
         
         # Clear active action
-        self.active_action_id = None
+        self._active_action_id = None
         self.current_step = None
         self.step_start_time = None
         
@@ -218,8 +218,8 @@ class SessionAgent:
         ok = message.get("ok", False)
         logger.info(f"Cancel acknowledgment for action {action_id}: ok={ok}")
         
-        if action_id == self.active_action_id:
-            self.active_action_id = None
+        if action_id == self._active_action_id:
+            self._active_action_id = None
             self.current_step = None
             self.step_start_time = None
 
@@ -227,7 +227,7 @@ class SessionAgent:
         """Handle player death."""
         logger.info(f"Player death recorded, action_id={action_id}")
         self.is_paused = True
-        self.active_action_id = None
+        self._active_action_id = None
         self.current_step = None
         self.step_start_time = None
 
@@ -330,68 +330,25 @@ class SessionAgent:
         
         # Add relative movement strategies based on radius
         if radius > -1:
-            for dx in [-32, -16, 16, 32]:
-                for dz in [-32, -16, 16, 32]:
-                    if dx != 0 or dz != 0:
-                        strategies.append(f"goto_relative:{dx}:{dz}")
+            strategies.extend([
+                "turn_slight_left",
+                "turn_slight_right",
+                "turn_around_forward",
+                "turn_left_forward",
+                "turn_right_forward",
+            ])
         
-        # Use bandit to choose strategy
-        chosen_idx = self.learner.select_arm(strategies)
-        chosen_strategy = strategies[chosen_idx]
-        return ExploreSearchSkill(chosen_strategy)
-
-    def update_reward(self) -> None:
-        """Calculate and accumulate reward based on progress toward goal."""
-        now = time.time()
-        time_delta = now - self.last_reward_time
-        if time_delta < 1.0:
-            return  # Only update once per second
+        # Filter to strategies that are in the bandit
+        available_strategies = [s for s in strategies if s in self.learner.arms]
         
-        reward = 0.0
+        if not available_strategies:
+            # If no strategies in bandit yet, use a default
+            return ExploreSearchSkill("forward", radius)
         
-        if self.goal.kind == "gather":
-            item = self.goal.parameters["item"]
-            target_count = self.goal.parameters["count"]
-            inventory = inventory_counts(self.state)
-            current_count = inventory.get(item, 0)
-            progress = min(1.0, current_count / target_count) if target_count > 0 else 0.0
-            reward = progress * 10.0  # Max 10 reward for completion
-            
-        elif self.goal.kind == "bootstrap":
-            item = self.goal.parameters["item"]
-            target_count = self.goal.parameters["count"]
-            inventory = inventory_counts(self.state)
-            current_count = inventory.get(item, 0)
-            progress = min(1.0, current_count / target_count) if target_count > 0 else 0.0
-            reward = progress * 15.0  # Bootstrap is harder, more reward
-            
-        elif self.goal.kind == "explore":
-            # Reward for movement and discovering new areas
-            pos = self.state.get("position")
-            if isinstance(pos, dict):
-                x = pos.get("x", 0.0)
-                z = pos.get("z", 0.0)
-                distance = math.sqrt(x*x + z*z)
-                radius = self.goal.parameters.get("radius", 100)
-                exploration_progress = min(1.0, distance / radius) if radius > 0 else 0.0
-                reward = exploration_progress * 8.0
-                
-                # Bonus reward for moving
-                if self.state.get("movement_active"):
-                    reward += 0.1
-        
-        # Penalty for low health
-        health = self.state.get("health")
-        if isinstance(health, (int, float)) and health < 10:
-            reward -= (10 - health) * 0.5
-        
-        # Penalty for being stuck (no movement for a while)
-        if not self.state.get("movement_active") and random.random() < 0.05:
-            reward -= 0.2
-        
-        self.reward_accumulator += reward
-        self.total_reward += reward
-        self.last_reward_time = now
+        # Choose using bandit
+        chosen_strategy = self.learner.choose_arm()
+        logger.info("Bandit chose strategy: %s", chosen_strategy)
+        return ExploreSearchSkill(chosen_strategy, radius)
 
     def record_step(
         self,
@@ -410,103 +367,67 @@ class SessionAgent:
             retry_budget=self.step_retries_left,
         )
         step.skill_instance = skill  # type: ignore
+        step.result = result
+        step.skill_result = skill_result
+        step.post_state = self.state.copy()
+        step.ended_time = time.time()
+        
         self.steps.append(step)
-        
-        logger.info(
-            "Step %d: %s -> %s (status=%s)",
-            len(self.steps),
-            skill.name,
-            skill_result.status,
-            skill_result.failure_code or "success",
-        )
-        
-        # Reset current step tracking
-        self.current_step = None
-        self.step_start_time = None
-        self.step_retries_left = 0
+        logger.info("Recorded step %d: %s", len(self.steps), skill.name)
 
-    def should_retry_step(self, skill_result: SkillResult) -> bool:
-        """Determine if we should retry the current step."""
-        if self.step_retries_left <= 0:
-            return False
+    def update_reward(self) -> None:
+        """Update reward based on current state."""
+        if self.last_observation_state is None:
+            self.last_observation_state = self.state.copy()
+            return
         
-        retryable_statuses = {
-            "precondition_failed",
-            "timeout",
-            "unreachable",
-            "unsafe",
-            "interrupted",
-            "verification_failed",
-        }
+        # Calculate displacement
+        last_pos = self.last_observation_state.get("position", {"x": 0, "y": 0, "z": 0})
+        curr_pos = self.state.get("position", {"x": 0, "y": 0, "z": 0})
         
-        if skill_result.status in retryable_statuses:
-            self.step_retries_left -= 1
-            logger.info("Retrying step, %d retries left", self.step_retries_left)
-            return True
+        dx = curr_pos.get("x", 0) - last_pos.get("x", 0)
+        dy = curr_pos.get("y", 0) - last_pos.get("y", 0)
+        dz = curr_pos.get("z", 0) - last_pos.get("z", 0)
         
-        return False
-
-    def get_action(self) -> dict[str, Any]:
-        """Get the next action to execute, or None if session is complete."""
-        # Update reward based on current state
-        self.update_reward()
+        horizontal_displacement = math.sqrt(dx * dx + dz * dz)
+        vertical_displacement = abs(dy)
         
-        # If we have a current step that's still running, continue with it
-        if self.current_step is not None and self.step_start_time is not None:
-            elapsed = time.time() - self.step_start_time
-            if elapsed * 1000 < self.current_step.timeout_ms:
-                # Step is still within timeout, return its action
-                return self.current_step.action
+        # Calculate health change
+        last_health = self.last_observation_state.get("health", 20.0)
+        curr_health = self.state.get("health", 20.0)
+        health_delta = curr_health - last_health
         
-        # Choose a new skill
-        skill = self.choose_skill()
-        if skill is None:
-            return {"kind": "stop", "reason": "no_skill_chosen"}
+        # Calculate reward
+        reward = 0.0
         
-        # Check if skill can start
-        can_start = skill.can_start(self.state)
-        if can_start.status != "success":
-            logger.warning("Skill %s cannot start: %s", skill.name, can_start.failure_code or can_start.status)
-            
-            # If it's a stop skill that can't start, still execute it
-            if isinstance(skill, StopSkill):
-                action = skill.build_action(self.state)
-                self.current_step = SkillStep(
-                    skill_name=skill.name,
-                    args={},
-                    action=action,
-                    timeout_ms=skill.timeout_ms,
-                    pre_state=self.state.copy(),
-                    retry_budget=0,
-                )
-                self.current_step.skill_instance = skill  # type: ignore
-                self.step_start_time = time.time()
-                self.step_retries_left = 3  # Give stop skills some retries
-                return action
-            
-            # Try a recovery skill instead
-            recovery = RecoverStuckSkill()
-            recovery_can_start = recovery.can_start(self.state)
-            if recovery_can_start.status == "success":
-                skill = recovery
-            else:
-                # Fall back to stop
-                skill = StopSkill("cannot_start_any_skill")
+        # Positive for movement
+        if horizontal_displacement > 0.1:
+            reward += horizontal_displacement * 0.5
         
-        # Build and return the action
-        action = skill.build_action(self.state)
+        # Negative for health loss
+        if health_delta < 0:
+            reward += health_delta * 2.0  # Penalize health loss
         
-        # Record as current step
-        self.current_step = SkillStep(
-            skill_name=skill.name,
-            args={},
-            action=action,
-            timeout_ms=skill.timeout_ms,
-            pre_state=self.state.copy(),
-            retry_budget=3,
-        )
-        self.current_step.skill_instance = skill  # type: ignore
-        self.step_start_time = time.time()
-        self.step_retries_left = 3
+        # Negative for falling
+        if dy < -1.0:
+            reward -= 1.0
         
-        return action
+        # Check if stuck (no movement but trying to move)
+        if horizontal_displacement < 0.1 and self._active_action_id is not None:
+            # Check if current action is a movement action
+            if self.current_step and isinstance(self.current_step.skill_instance, ExploreSearchSkill):
+                reward -= 0.5
+        
+        # Check for death
+        if curr_health <= 0:
+            reward -= 30.0
+        
+        # Accumulate reward
+        self.reward_accumulator += reward
+        self.total_reward += reward
+        self.last_reward_time = time.time()
+        
+        # Update last observation
+        self.last_observation_state = self.state.copy()
+        
+        logger.debug("Reward update: +%.2f (total: %.2f)", reward, self.total_reward)
